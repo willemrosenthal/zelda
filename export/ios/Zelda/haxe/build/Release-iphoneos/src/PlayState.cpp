@@ -48,7 +48,7 @@ Void PlayState_obj::__construct()
 HX_STACK_FRAME("PlayState","new",0xf8bf96cf,"PlayState.new","PlayState.hx",26,0xb30d7781)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(274)
+	HX_STACK_LINE(275)
 	this->arrayPlaceCounter = (int)0;
 	HX_STACK_LINE(67)
 	this->gameZoom = (int)3;
@@ -130,13 +130,15 @@ Void PlayState_obj::config( ){
 		HX_STACK_LINE(98)
 		this->gWidth = (::Global_obj::tileSize * this->mapWidth);
 		HX_STACK_LINE(99)
-		this->xScrollSpeed = (int)4;
+		::Global_obj::gameTileSize = Array_obj< int >::__new().Add(this->mapWidth).Add(this->mapHeight);
 		HX_STACK_LINE(100)
-		this->yScrollSpeed = (int)4;
+		this->xScrollSpeed = (int)4;
 		HX_STACK_LINE(101)
-		this->pSSx = (this->xScrollSpeed * ((Float(((this->mapWidth - 0.8))) / Float(this->mapWidth))));
+		this->yScrollSpeed = (int)4;
 		HX_STACK_LINE(102)
-		this->pSSy = (this->yScrollSpeed * ((Float(((this->mapHeight - 0.8))) / Float(this->mapHeight))));
+		this->pSSx = (this->xScrollSpeed * ((Float(((this->mapWidth - 0.7))) / Float(this->mapWidth))));
+		HX_STACK_LINE(103)
+		this->pSSy = (this->yScrollSpeed * ((Float(((this->mapHeight - 0.7))) / Float(this->mapHeight))));
 	}
 return null();
 }
@@ -146,23 +148,23 @@ HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,config,(void))
 
 Void PlayState_obj::buildMap( ){
 {
-		HX_STACK_FRAME("PlayState","buildMap",0x02761f3f,"PlayState.buildMap","PlayState.hx",106,0xb30d7781)
+		HX_STACK_FRAME("PlayState","buildMap",0x02761f3f,"PlayState.buildMap","PlayState.hx",107,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(107)
-		this->mapData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::c->__get((int)0)).StaticCast< Array< int > >()->__get(::Global_obj::c->__get((int)1))) + HX_CSTRING(".txt"));
 		HX_STACK_LINE(108)
+		this->mapData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::c->__get((int)0)).StaticCast< Array< int > >()->__get(::Global_obj::c->__get((int)1))) + HX_CSTRING(".txt"));
+		HX_STACK_LINE(109)
 		this->tileSet = HX_CSTRING("assets/tilesets/1.png");
-		HX_STACK_LINE(112)
-		::String _g = ::openfl::Assets_obj::getText(this->mapData);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(112)
-		this->levelMap->loadMap(_g,this->tileSet,::Global_obj::tileSize,::Global_obj::tileSize,(int)0,(int)0,null(),null());
 		HX_STACK_LINE(113)
-		this->levelMap->set_x(this->mapx);
+		::String _g = ::openfl::Assets_obj::getText(this->mapData);		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(113)
+		this->levelMap->loadMap(_g,this->tileSet,::Global_obj::tileSize,::Global_obj::tileSize,(int)0,(int)0,null(),null());
 		HX_STACK_LINE(114)
-		this->levelMap->set_y(this->mapy);
+		this->levelMap->set_x(this->mapx);
 		HX_STACK_LINE(115)
-		this->map->add(this->levelMap);
+		this->levelMap->set_y(this->mapy);
 		HX_STACK_LINE(116)
+		this->map->add(this->levelMap);
+		HX_STACK_LINE(117)
 		this->convertMapData();
 	}
 return null();
@@ -173,47 +175,47 @@ HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,buildMap,(void))
 
 Void PlayState_obj::buildNextMap( ){
 {
-		HX_STACK_FRAME("PlayState","buildNextMap",0xd2cf398c,"PlayState.buildNextMap","PlayState.hx",120,0xb30d7781)
+		HX_STACK_FRAME("PlayState","buildNextMap",0xd2cf398c,"PlayState.buildNextMap","PlayState.hx",121,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(121)
-		this->nextData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::n->__get((int)0)).StaticCast< Array< int > >()->__get(::Global_obj::n->__get((int)1))) + HX_CSTRING(".txt"));
 		HX_STACK_LINE(122)
+		this->nextData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::n->__get((int)0)).StaticCast< Array< int > >()->__get(::Global_obj::n->__get((int)1))) + HX_CSTRING(".txt"));
+		HX_STACK_LINE(123)
 		this->nextSet = HX_CSTRING("assets/tilesets/1.png");
-		HX_STACK_LINE(124)
+		HX_STACK_LINE(125)
 		::String _g = ::openfl::Assets_obj::getText(this->nextData);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(124)
+		HX_STACK_LINE(125)
 		this->nextMap->loadMap(_g,this->nextSet,::Global_obj::tileSize,::Global_obj::tileSize,(int)0,(int)0,null(),null());
-		HX_STACK_LINE(126)
+		HX_STACK_LINE(127)
 		if (((this->nextDir == HX_CSTRING("up")))){
-			HX_STACK_LINE(127)
-			this->nextMap->set_x(this->levelMap->x);
 			HX_STACK_LINE(128)
+			this->nextMap->set_x(this->levelMap->x);
+			HX_STACK_LINE(129)
 			this->nextMap->set_y((this->levelMap->y - this->gHight));
 		}
-		HX_STACK_LINE(130)
+		HX_STACK_LINE(131)
 		if (((this->nextDir == HX_CSTRING("right")))){
-			HX_STACK_LINE(131)
-			this->nextMap->set_x((this->levelMap->x + this->gWidth));
 			HX_STACK_LINE(132)
+			this->nextMap->set_x((this->levelMap->x + this->gWidth));
+			HX_STACK_LINE(133)
 			this->nextMap->set_y(this->levelMap->y);
 		}
-		HX_STACK_LINE(134)
+		HX_STACK_LINE(135)
 		if (((this->nextDir == HX_CSTRING("down")))){
-			HX_STACK_LINE(135)
-			this->nextMap->set_x(this->levelMap->x);
 			HX_STACK_LINE(136)
+			this->nextMap->set_x(this->levelMap->x);
+			HX_STACK_LINE(137)
 			this->nextMap->set_y((this->levelMap->y + this->gHight));
 		}
-		HX_STACK_LINE(138)
+		HX_STACK_LINE(139)
 		if (((this->nextDir == HX_CSTRING("left")))){
-			HX_STACK_LINE(139)
-			this->nextMap->set_x((this->levelMap->x - this->gWidth));
 			HX_STACK_LINE(140)
+			this->nextMap->set_x((this->levelMap->x - this->gWidth));
+			HX_STACK_LINE(141)
 			this->nextMap->set_y(this->levelMap->y);
 		}
-		HX_STACK_LINE(143)
+		HX_STACK_LINE(144)
 		this->nextMap->set_visible(true);
-		HX_STACK_LINE(145)
+		HX_STACK_LINE(146)
 		this->map->add(this->nextMap);
 	}
 return null();
@@ -224,93 +226,93 @@ HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,buildNextMap,(void))
 
 Void PlayState_obj::setupHud( ){
 {
-		HX_STACK_FRAME("PlayState","setupHud",0xd1eb4d6b,"PlayState.setupHud","PlayState.hx",148,0xb30d7781)
+		HX_STACK_FRAME("PlayState","setupHud",0xd1eb4d6b,"PlayState.setupHud","PlayState.hx",149,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(150)
-		::flixel::group::FlxGroup _g = ::flixel::group::FlxGroup_obj::__new(null());		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(150)
-		this->border = _g;
 		HX_STACK_LINE(151)
+		::flixel::group::FlxGroup _g = ::flixel::group::FlxGroup_obj::__new(null());		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(151)
+		this->border = _g;
+		HX_STACK_LINE(152)
 		this->add(this->border);
-		HX_STACK_LINE(153)
-		::flixel::FlxSprite _g1 = ::flixel::FlxSprite_obj::__new((int)0,(int)-8,HX_CSTRING("assets/images/bar_h.png"));		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(153)
-		this->tBox = _g1;
 		HX_STACK_LINE(154)
+		::flixel::FlxSprite _g1 = ::flixel::FlxSprite_obj::__new((int)0,(int)-8,HX_CSTRING("assets/images/bar_h.png"));		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(154)
+		this->tBox = _g1;
+		HX_STACK_LINE(155)
 		this->border->add(this->tBox);
-		HX_STACK_LINE(156)
-		::flixel::FlxSprite _g2 = ::flixel::FlxSprite_obj::__new((int)-8,(int)0,HX_CSTRING("assets/images/bar_v.png"));		HX_STACK_VAR(_g2,"_g2");
-		HX_STACK_LINE(156)
-		this->lBox = _g2;
 		HX_STACK_LINE(157)
+		::flixel::FlxSprite _g2 = ::flixel::FlxSprite_obj::__new((int)-8,(int)0,HX_CSTRING("assets/images/bar_v.png"));		HX_STACK_VAR(_g2,"_g2");
+		HX_STACK_LINE(157)
+		this->lBox = _g2;
+		HX_STACK_LINE(158)
 		this->border->add(this->lBox);
-		HX_STACK_LINE(159)
-		::flixel::FlxSprite _g3 = ::flixel::FlxSprite_obj::__new((int)0,(this->gHight + (int)8),HX_CSTRING("assets/images/bar_h.png"));		HX_STACK_VAR(_g3,"_g3");
-		HX_STACK_LINE(159)
-		this->bBox = _g3;
 		HX_STACK_LINE(160)
+		::flixel::FlxSprite _g3 = ::flixel::FlxSprite_obj::__new((int)0,(this->gHight + (int)8),HX_CSTRING("assets/images/bar_h.png"));		HX_STACK_VAR(_g3,"_g3");
+		HX_STACK_LINE(160)
+		this->bBox = _g3;
+		HX_STACK_LINE(161)
 		this->border->add(this->bBox);
-		HX_STACK_LINE(162)
-		::flixel::FlxSprite _g4 = ::flixel::FlxSprite_obj::__new((this->gWidth + (int)8),(int)0,HX_CSTRING("assets/images/bar_v.png"));		HX_STACK_VAR(_g4,"_g4");
-		HX_STACK_LINE(162)
-		this->rBox = _g4;
 		HX_STACK_LINE(163)
+		::flixel::FlxSprite _g4 = ::flixel::FlxSprite_obj::__new((this->gWidth + (int)8),(int)0,HX_CSTRING("assets/images/bar_v.png"));		HX_STACK_VAR(_g4,"_g4");
+		HX_STACK_LINE(163)
+		this->rBox = _g4;
+		HX_STACK_LINE(164)
 		this->border->add(this->rBox);
-		HX_STACK_LINE(166)
-		::flixel::group::FlxGroup _g5 = ::flixel::group::FlxGroup_obj::__new(null());		HX_STACK_VAR(_g5,"_g5");
-		HX_STACK_LINE(166)
-		this->hud = _g5;
 		HX_STACK_LINE(167)
+		::flixel::group::FlxGroup _g5 = ::flixel::group::FlxGroup_obj::__new(null());		HX_STACK_VAR(_g5,"_g5");
+		HX_STACK_LINE(167)
+		this->hud = _g5;
+		HX_STACK_LINE(168)
 		this->add(this->hud);
-		HX_STACK_LINE(169)
-		Float joyPosX = (::Global_obj::gameWidth * 0.3);		HX_STACK_VAR(joyPosX,"joyPosX");
 		HX_STACK_LINE(170)
+		Float joyPosX = (::Global_obj::gameWidth * 0.3);		HX_STACK_VAR(joyPosX,"joyPosX");
+		HX_STACK_LINE(171)
 		Float joyPosY = (::Global_obj::gameHeight * 0.82);		HX_STACK_VAR(joyPosY,"joyPosY");
-		HX_STACK_LINE(173)
-		::flixel::FlxSprite _g6 = ::flixel::FlxSprite_obj::__new((int)0,(this->gHight + this->levelMap->y),HX_CSTRING("assets/images/blackbox.png"));		HX_STACK_VAR(_g6,"_g6");
-		HX_STACK_LINE(173)
-		this->blackBox = _g6;
 		HX_STACK_LINE(174)
+		::flixel::FlxSprite _g6 = ::flixel::FlxSprite_obj::__new((int)0,(this->gHight + this->levelMap->y),HX_CSTRING("assets/images/blackbox.png"));		HX_STACK_VAR(_g6,"_g6");
+		HX_STACK_LINE(174)
+		this->blackBox = _g6;
+		HX_STACK_LINE(175)
 		this->hud->add(this->blackBox);
-		HX_STACK_LINE(176)
-		::flixel::FlxSprite _g7 = ::flixel::FlxSprite_obj::__new(joyPosX,joyPosY,HX_CSTRING("assets/images/joystick_ring.png"));		HX_STACK_VAR(_g7,"_g7");
-		HX_STACK_LINE(176)
-		this->joystickBG = _g7;
 		HX_STACK_LINE(177)
-		{
-			HX_STACK_LINE(177)
-			::flixel::FlxSprite _g8 = this->joystickBG;		HX_STACK_VAR(_g8,"_g8");
-			HX_STACK_LINE(177)
-			Float _g81 = this->joystickBG->get_width();		HX_STACK_VAR(_g81,"_g81");
-			HX_STACK_LINE(177)
-			Float _g9 = (_g81 * 0.5);		HX_STACK_VAR(_g9,"_g9");
-			HX_STACK_LINE(177)
-			Float _g10 = (_g8->x - _g9);		HX_STACK_VAR(_g10,"_g10");
-			HX_STACK_LINE(177)
-			_g8->set_x(_g10);
-		}
+		::flixel::FlxSprite _g7 = ::flixel::FlxSprite_obj::__new(joyPosX,joyPosY,HX_CSTRING("assets/images/joystick_ring.png"));		HX_STACK_VAR(_g7,"_g7");
+		HX_STACK_LINE(177)
+		this->joystickBG = _g7;
 		HX_STACK_LINE(178)
 		{
 			HX_STACK_LINE(178)
 			::flixel::FlxSprite _g8 = this->joystickBG;		HX_STACK_VAR(_g8,"_g8");
 			HX_STACK_LINE(178)
-			Float _g11 = this->joystickBG->get_height();		HX_STACK_VAR(_g11,"_g11");
+			Float _g81 = this->joystickBG->get_width();		HX_STACK_VAR(_g81,"_g81");
 			HX_STACK_LINE(178)
-			Float _g12 = (_g11 * 0.5);		HX_STACK_VAR(_g12,"_g12");
+			Float _g9 = (_g81 * 0.5);		HX_STACK_VAR(_g9,"_g9");
 			HX_STACK_LINE(178)
-			Float _g13 = (_g8->y - _g12);		HX_STACK_VAR(_g13,"_g13");
+			Float _g10 = (_g8->x - _g9);		HX_STACK_VAR(_g10,"_g10");
 			HX_STACK_LINE(178)
-			_g8->set_y(_g13);
+			_g8->set_x(_g10);
 		}
 		HX_STACK_LINE(179)
+		{
+			HX_STACK_LINE(179)
+			::flixel::FlxSprite _g8 = this->joystickBG;		HX_STACK_VAR(_g8,"_g8");
+			HX_STACK_LINE(179)
+			Float _g11 = this->joystickBG->get_height();		HX_STACK_VAR(_g11,"_g11");
+			HX_STACK_LINE(179)
+			Float _g12 = (_g11 * 0.5);		HX_STACK_VAR(_g12,"_g12");
+			HX_STACK_LINE(179)
+			Float _g13 = (_g8->y - _g12);		HX_STACK_VAR(_g13,"_g13");
+			HX_STACK_LINE(179)
+			_g8->set_y(_g13);
+		}
+		HX_STACK_LINE(180)
 		this->hud->add(this->joystickBG);
-		HX_STACK_LINE(181)
-		Float _g14 = this->joystickBG->get_width();		HX_STACK_VAR(_g14,"_g14");
-		HX_STACK_LINE(181)
-		::Joystick _g15 = ::Joystick_obj::__new(joyPosX,joyPosY,_g14);		HX_STACK_VAR(_g15,"_g15");
-		HX_STACK_LINE(181)
-		this->joystick = _g15;
 		HX_STACK_LINE(182)
+		Float _g14 = this->joystickBG->get_width();		HX_STACK_VAR(_g14,"_g14");
+		HX_STACK_LINE(182)
+		::Joystick _g15 = ::Joystick_obj::__new(joyPosX,joyPosY,_g14);		HX_STACK_VAR(_g15,"_g15");
+		HX_STACK_LINE(182)
+		this->joystick = _g15;
+		HX_STACK_LINE(183)
 		this->hud->add(this->joystick);
 	}
 return null();
@@ -321,9 +323,9 @@ HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,setupHud,(void))
 
 Void PlayState_obj::destroy( ){
 {
-		HX_STACK_FRAME("PlayState","destroy",0x6ec756e9,"PlayState.destroy","PlayState.hx",192,0xb30d7781)
+		HX_STACK_FRAME("PlayState","destroy",0x6ec756e9,"PlayState.destroy","PlayState.hx",193,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(192)
+		HX_STACK_LINE(193)
 		this->super::destroy();
 	}
 return null();
@@ -332,15 +334,15 @@ return null();
 
 Void PlayState_obj::update( ){
 {
-		HX_STACK_FRAME("PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",197,0xb30d7781)
+		HX_STACK_FRAME("PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",198,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(198)
+		HX_STACK_LINE(199)
 		this->super::update();
-		HX_STACK_LINE(201)
+		HX_STACK_LINE(202)
 		::flixel::FlxG_obj::overlap(this->player,this->border,this->touchEdge_dyn(),null());
-		HX_STACK_LINE(203)
+		HX_STACK_LINE(204)
 		if (((::Global_obj::changingScreens == true))){
-			HX_STACK_LINE(204)
+			HX_STACK_LINE(205)
 			this->moveScreens();
 		}
 	}
@@ -350,121 +352,121 @@ return null();
 
 Void PlayState_obj::moveScreens( ){
 {
-		HX_STACK_FRAME("PlayState","moveScreens",0x0c0149e5,"PlayState.moveScreens","PlayState.hx",207,0xb30d7781)
+		HX_STACK_FRAME("PlayState","moveScreens",0x0c0149e5,"PlayState.moveScreens","PlayState.hx",208,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(208)
+		HX_STACK_LINE(209)
 		if (((this->nextDir == HX_CSTRING("up")))){
-			HX_STACK_LINE(209)
-			{
-				HX_STACK_LINE(209)
-				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(209)
-				_g->set_y((_g->y + this->yScrollSpeed));
-			}
 			HX_STACK_LINE(210)
 			{
 				HX_STACK_LINE(210)
-				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(210)
 				_g->set_y((_g->y + this->yScrollSpeed));
 			}
 			HX_STACK_LINE(211)
 			{
 				HX_STACK_LINE(211)
-				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(211)
-				_g->set_y((_g->y + this->pSSy));
+				_g->set_y((_g->y + this->yScrollSpeed));
 			}
 			HX_STACK_LINE(212)
+			{
+				HX_STACK_LINE(212)
+				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				HX_STACK_LINE(212)
+				_g->set_y((_g->y + this->pSSy));
+			}
+			HX_STACK_LINE(213)
 			if (((this->levelMap->y >= this->gHight))){
-				HX_STACK_LINE(213)
+				HX_STACK_LINE(214)
 				this->finishSroll();
 			}
 		}
-		HX_STACK_LINE(215)
+		HX_STACK_LINE(216)
 		if (((this->nextDir == HX_CSTRING("down")))){
-			HX_STACK_LINE(216)
-			{
-				HX_STACK_LINE(216)
-				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(216)
-				_g->set_y((_g->y - this->yScrollSpeed));
-			}
 			HX_STACK_LINE(217)
 			{
 				HX_STACK_LINE(217)
-				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(217)
 				_g->set_y((_g->y - this->yScrollSpeed));
 			}
 			HX_STACK_LINE(218)
 			{
 				HX_STACK_LINE(218)
-				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(218)
-				_g->set_y((_g->y - this->pSSy));
+				_g->set_y((_g->y - this->yScrollSpeed));
 			}
 			HX_STACK_LINE(219)
+			{
+				HX_STACK_LINE(219)
+				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				HX_STACK_LINE(219)
+				_g->set_y((_g->y - this->pSSy));
+			}
+			HX_STACK_LINE(220)
 			if (((this->levelMap->y <= -(this->gHight)))){
-				HX_STACK_LINE(220)
+				HX_STACK_LINE(221)
 				this->finishSroll();
 			}
 		}
-		HX_STACK_LINE(222)
+		HX_STACK_LINE(223)
 		if (((this->nextDir == HX_CSTRING("left")))){
-			HX_STACK_LINE(223)
-			{
-				HX_STACK_LINE(223)
-				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(223)
-				_g->set_x((_g->x + this->xScrollSpeed));
-			}
 			HX_STACK_LINE(224)
 			{
 				HX_STACK_LINE(224)
-				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(224)
 				_g->set_x((_g->x + this->xScrollSpeed));
 			}
 			HX_STACK_LINE(225)
 			{
 				HX_STACK_LINE(225)
-				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(225)
-				_g->set_x((_g->x + this->pSSx));
+				_g->set_x((_g->x + this->xScrollSpeed));
 			}
 			HX_STACK_LINE(226)
+			{
+				HX_STACK_LINE(226)
+				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				HX_STACK_LINE(226)
+				_g->set_x((_g->x + this->pSSx));
+			}
+			HX_STACK_LINE(227)
 			if (((this->levelMap->x >= (this->gWidth - this->mapx)))){
-				HX_STACK_LINE(227)
+				HX_STACK_LINE(228)
 				this->finishSroll();
 			}
 		}
-		HX_STACK_LINE(229)
+		HX_STACK_LINE(230)
 		if (((this->nextDir == HX_CSTRING("right")))){
-			HX_STACK_LINE(230)
-			{
-				HX_STACK_LINE(230)
-				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(230)
-				_g->set_x((_g->x - this->xScrollSpeed));
-			}
 			HX_STACK_LINE(231)
 			{
 				HX_STACK_LINE(231)
-				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->levelMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(231)
 				_g->set_x((_g->x - this->xScrollSpeed));
 			}
 			HX_STACK_LINE(232)
 			{
 				HX_STACK_LINE(232)
-				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				::flixel::tile::FlxTilemap _g = this->nextMap;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(232)
-				_g->set_x((_g->x - this->pSSx));
+				_g->set_x((_g->x - this->xScrollSpeed));
 			}
 			HX_STACK_LINE(233)
+			{
+				HX_STACK_LINE(233)
+				::Player _g = this->player;		HX_STACK_VAR(_g,"_g");
+				HX_STACK_LINE(233)
+				_g->set_x((_g->x - this->pSSx));
+			}
+			HX_STACK_LINE(234)
 			if (((this->levelMap->x <= (-(this->gWidth) + this->mapx)))){
-				HX_STACK_LINE(234)
+				HX_STACK_LINE(235)
 				this->finishSroll();
 			}
 		}
@@ -477,16 +479,16 @@ HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,moveScreens,(void))
 
 Void PlayState_obj::finishSroll( ){
 {
-		HX_STACK_FRAME("PlayState","finishSroll",0xb317118c,"PlayState.finishSroll","PlayState.hx",239,0xb30d7781)
+		HX_STACK_FRAME("PlayState","finishSroll",0xb317118c,"PlayState.finishSroll","PlayState.hx",240,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(240)
-		::Global_obj::changingScreens = false;
 		HX_STACK_LINE(241)
 		::Global_obj::c = ::Global_obj::n;
 		HX_STACK_LINE(242)
 		this->nextMap->set_visible(false);
 		HX_STACK_LINE(243)
 		this->buildMap();
+		HX_STACK_LINE(244)
+		::Global_obj::changingScreens = false;
 	}
 return null();
 }
@@ -496,54 +498,54 @@ HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,finishSroll,(void))
 
 Void PlayState_obj::touchEdge( ::flixel::FlxSprite Player,::flixel::FlxSprite Edge){
 {
-		HX_STACK_FRAME("PlayState","touchEdge",0x44ce1b4b,"PlayState.touchEdge","PlayState.hx",246,0xb30d7781)
+		HX_STACK_FRAME("PlayState","touchEdge",0x44ce1b4b,"PlayState.touchEdge","PlayState.hx",247,0xb30d7781)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(Player,"Player")
 		HX_STACK_ARG(Edge,"Edge")
-		HX_STACK_LINE(247)
+		HX_STACK_LINE(248)
 		if ((::Global_obj::changingScreens)){
-			HX_STACK_LINE(248)
+			HX_STACK_LINE(249)
 			return null();
 		}
-		HX_STACK_LINE(250)
+		HX_STACK_LINE(251)
 		::Global_obj::changingScreens = true;
-		HX_STACK_LINE(252)
+		HX_STACK_LINE(253)
 		if (((Edge == this->tBox))){
-			HX_STACK_LINE(253)
-			this->nextDir = HX_CSTRING("up");
 			HX_STACK_LINE(254)
+			this->nextDir = HX_CSTRING("up");
+			HX_STACK_LINE(255)
 			(::Global_obj::n[(int)0])--;
 		}
 		else{
-			HX_STACK_LINE(256)
+			HX_STACK_LINE(257)
 			if (((Edge == this->bBox))){
-				HX_STACK_LINE(257)
-				this->nextDir = HX_CSTRING("down");
 				HX_STACK_LINE(258)
+				this->nextDir = HX_CSTRING("down");
+				HX_STACK_LINE(259)
 				(::Global_obj::n[(int)0])++;
 			}
 			else{
-				HX_STACK_LINE(260)
+				HX_STACK_LINE(261)
 				if (((Edge == this->rBox))){
-					HX_STACK_LINE(261)
-					this->nextDir = HX_CSTRING("right");
 					HX_STACK_LINE(262)
+					this->nextDir = HX_CSTRING("right");
+					HX_STACK_LINE(263)
 					(::Global_obj::n[(int)1])++;
 				}
 				else{
-					HX_STACK_LINE(264)
+					HX_STACK_LINE(265)
 					if (((Edge == this->lBox))){
-						HX_STACK_LINE(265)
-						this->nextDir = HX_CSTRING("left");
 						HX_STACK_LINE(266)
+						this->nextDir = HX_CSTRING("left");
+						HX_STACK_LINE(267)
 						(::Global_obj::n[(int)1])--;
 					}
 				}
 			}
 		}
-		HX_STACK_LINE(268)
-		::Global_obj::nextDir = this->nextDir;
 		HX_STACK_LINE(269)
+		::Global_obj::nextDir = this->nextDir;
+		HX_STACK_LINE(270)
 		this->buildNextMap();
 	}
 return null();
@@ -554,65 +556,65 @@ HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,touchEdge,(void))
 
 Void PlayState_obj::convertMapData( ){
 {
-		HX_STACK_FRAME("PlayState","convertMapData",0x44f0ab24,"PlayState.convertMapData","PlayState.hx",275,0xb30d7781)
+		HX_STACK_FRAME("PlayState","convertMapData",0x44f0ab24,"PlayState.convertMapData","PlayState.hx",276,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(276)
-		Array< int > _g = Array_obj< int >::__new();		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(276)
-		this->dataArray = _g;
 		HX_STACK_LINE(277)
+		Array< int > _g = Array_obj< int >::__new();		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(277)
+		this->dataArray = _g;
+		HX_STACK_LINE(278)
 		this->arrayPlaceCounter = (int)0;
-		HX_STACK_LINE(278)
+		HX_STACK_LINE(279)
 		Array< int > _g1 = this->levelMap->getData(null());		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(278)
+		HX_STACK_LINE(279)
 		this->dataArray = _g1;
-		HX_STACK_LINE(280)
-		Array< ::Dynamic > _g2 = Array_obj< ::Dynamic >::__new();		HX_STACK_VAR(_g2,"_g2");
-		HX_STACK_LINE(280)
-		this->finalArray = _g2;
 		HX_STACK_LINE(281)
+		Array< ::Dynamic > _g2 = Array_obj< ::Dynamic >::__new();		HX_STACK_VAR(_g2,"_g2");
+		HX_STACK_LINE(281)
+		this->finalArray = _g2;
+		HX_STACK_LINE(282)
 		{
-			HX_STACK_LINE(281)
+			HX_STACK_LINE(282)
 			int _g11 = (int)0;		HX_STACK_VAR(_g11,"_g11");
-			HX_STACK_LINE(281)
+			HX_STACK_LINE(282)
 			int _g3 = this->mapHeight;		HX_STACK_VAR(_g3,"_g3");
-			HX_STACK_LINE(281)
+			HX_STACK_LINE(282)
 			while((true)){
-				HX_STACK_LINE(281)
+				HX_STACK_LINE(282)
 				if ((!(((_g11 < _g3))))){
-					HX_STACK_LINE(281)
+					HX_STACK_LINE(282)
 					break;
 				}
-				HX_STACK_LINE(281)
+				HX_STACK_LINE(282)
 				int n = (_g11)++;		HX_STACK_VAR(n,"n");
-				HX_STACK_LINE(282)
-				Array< int > _g31 = Array_obj< int >::__new();		HX_STACK_VAR(_g31,"_g31");
-				HX_STACK_LINE(282)
-				this->finalArray->push(_g31);
 				HX_STACK_LINE(283)
+				Array< int > _g31 = Array_obj< int >::__new();		HX_STACK_VAR(_g31,"_g31");
+				HX_STACK_LINE(283)
+				this->finalArray->push(_g31);
+				HX_STACK_LINE(284)
 				{
-					HX_STACK_LINE(283)
+					HX_STACK_LINE(284)
 					int _g32 = (int)0;		HX_STACK_VAR(_g32,"_g32");
-					HX_STACK_LINE(283)
+					HX_STACK_LINE(284)
 					int _g21 = this->mapWidth;		HX_STACK_VAR(_g21,"_g21");
-					HX_STACK_LINE(283)
+					HX_STACK_LINE(284)
 					while((true)){
-						HX_STACK_LINE(283)
+						HX_STACK_LINE(284)
 						if ((!(((_g32 < _g21))))){
-							HX_STACK_LINE(283)
+							HX_STACK_LINE(284)
 							break;
 						}
-						HX_STACK_LINE(283)
-						int q = (_g32)++;		HX_STACK_VAR(q,"q");
 						HX_STACK_LINE(284)
-						this->finalArray->__get(n).StaticCast< Array< int > >()->push(this->dataArray->__get(this->arrayPlaceCounter));
+						int q = (_g32)++;		HX_STACK_VAR(q,"q");
 						HX_STACK_LINE(285)
+						this->finalArray->__get(n).StaticCast< Array< int > >()->push(this->dataArray->__get(this->arrayPlaceCounter));
+						HX_STACK_LINE(286)
 						(this->arrayPlaceCounter)++;
 					}
 				}
 			}
 		}
-		HX_STACK_LINE(288)
+		HX_STACK_LINE(289)
 		::Global_obj::cMap = this->finalArray;
 	}
 return null();

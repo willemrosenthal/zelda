@@ -8,7 +8,7 @@ import flixel.FlxObject;
 class Joystick extends FlxSprite {
 
 	public var maxDistance:Float = 38;
-	public var moveIgnoreRange:Int = 4;
+	public var moveIgnoreRange:Int = 8;
 	public var moveSpeed:Float = 1;
     public var mouseMaxY:Float = 70;
     public var mouseMaxX:Float = 70;
@@ -33,6 +33,8 @@ class Joystick extends FlxSprite {
 		offset.x = width * 0.5;
 
         maxDistance = RingSize * 0.5 - width * 0.5;
+        mouseMaxY = RingSize * 0.86;
+        mouseMaxX = RingSize * 0.86;
 	}
 
 	override public function update():Void {

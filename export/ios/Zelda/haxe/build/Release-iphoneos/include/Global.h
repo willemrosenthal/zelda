@@ -39,6 +39,7 @@ class HXCPP_CLASS_ATTRIBUTES  Global_obj : public hx::Object{
 		static bool ini;
 		static ::flixel::util::FlxPoint zeroPoint;
 		static int tileSize;
+		static Array< int > gameTileSize;
 		static Float gameHeight;
 		static Float gameWidth;
 		static bool mouseEnabled;

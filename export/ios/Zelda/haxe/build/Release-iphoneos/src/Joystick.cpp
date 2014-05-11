@@ -97,7 +97,7 @@ HX_STACK_ARG(RingSize,"RingSize")
 	HX_STACK_LINE(12)
 	this->moveSpeed = (int)1;
 	HX_STACK_LINE(11)
-	this->moveIgnoreRange = (int)4;
+	this->moveIgnoreRange = (int)8;
 	HX_STACK_LINE(10)
 	this->maxDistance = (int)38;
 	HX_STACK_LINE(26)
@@ -134,6 +134,10 @@ HX_STACK_ARG(RingSize,"RingSize")
 	Float _g8 = ((RingSize * 0.5) - _g7);		HX_STACK_VAR(_g8,"_g8");
 	HX_STACK_LINE(35)
 	this->maxDistance = _g8;
+	HX_STACK_LINE(36)
+	this->mouseMaxY = (RingSize * 0.86);
+	HX_STACK_LINE(37)
+	this->mouseMaxX = (RingSize * 0.86);
 }
 ;
 	return null();
@@ -154,65 +158,65 @@ Dynamic Joystick_obj::__Create(hx::DynamicArray inArgs)
 
 Void Joystick_obj::update( ){
 {
-		HX_STACK_FRAME("Joystick","update",0xb982d35b,"Joystick.update","Joystick.hx",38,0x21141762)
+		HX_STACK_FRAME("Joystick","update",0xb982d35b,"Joystick.update","Joystick.hx",40,0x21141762)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(41)
 		this->super::update();
 		struct _Function_1_1{
-			inline static bool Block( ){
-				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Joystick.hx",41,0x21141762)
-				{
-					HX_STACK_LINE(41)
-					::flixel::input::mouse::FlxMouseButton _this = ::flixel::FlxG_obj::mouse->_leftButton;		HX_STACK_VAR(_this,"_this");
-					HX_STACK_LINE(41)
-					return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
-				}
-				return null();
-			}
-		};
-		HX_STACK_LINE(41)
-		if (((bool(_Function_1_1::Block()) && bool(!(this->mouseDown))))){
-			HX_STACK_LINE(42)
-			this->mouseDown = true;
-		}
-		struct _Function_1_2{
 			inline static bool Block( ){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Joystick.hx",43,0x21141762)
 				{
 					HX_STACK_LINE(43)
 					::flixel::input::mouse::FlxMouseButton _this = ::flixel::FlxG_obj::mouse->_leftButton;		HX_STACK_VAR(_this,"_this");
 					HX_STACK_LINE(43)
-					return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
+					return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
 				}
 				return null();
 			}
 		};
 		HX_STACK_LINE(43)
-		if ((_Function_1_2::Block())){
+		if (((bool(_Function_1_1::Block()) && bool(!(this->mouseDown))))){
 			HX_STACK_LINE(44)
+			this->mouseDown = true;
+		}
+		struct _Function_1_2{
+			inline static bool Block( ){
+				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Joystick.hx",45,0x21141762)
+				{
+					HX_STACK_LINE(45)
+					::flixel::input::mouse::FlxMouseButton _this = ::flixel::FlxG_obj::mouse->_leftButton;		HX_STACK_VAR(_this,"_this");
+					HX_STACK_LINE(45)
+					return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
+				}
+				return null();
+			}
+		};
+		HX_STACK_LINE(45)
+		if ((_Function_1_2::Block())){
+			HX_STACK_LINE(46)
 			this->mouseDown = false;
 		}
-		HX_STACK_LINE(47)
+		HX_STACK_LINE(49)
 		if ((this->noMove())){
-			HX_STACK_LINE(48)
+			HX_STACK_LINE(50)
 			return null();
 		}
-		HX_STACK_LINE(50)
+		HX_STACK_LINE(52)
 		if ((!(this->mouseDown))){
-			HX_STACK_LINE(51)
-			this->set_x(this->originPoint->x);
-			HX_STACK_LINE(52)
-			this->set_y(this->originPoint->y);
 			HX_STACK_LINE(53)
-			::Global_obj::move->set_x((int)0);
+			this->set_x(this->originPoint->x);
 			HX_STACK_LINE(54)
-			::Global_obj::move->set_y((int)0);
+			this->set_y(this->originPoint->y);
 			HX_STACK_LINE(55)
+			::Global_obj::move->set_x((int)0);
+			HX_STACK_LINE(56)
+			::Global_obj::move->set_y((int)0);
+			HX_STACK_LINE(57)
 			return null();
 		}
-		HX_STACK_LINE(58)
+		HX_STACK_LINE(60)
 		::flixel::util::FlxPoint _g = this->calculateJoystick();		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(58)
+		HX_STACK_LINE(60)
 		::Global_obj::move = _g;
 	}
 return null();
@@ -220,116 +224,116 @@ return null();
 
 
 ::flixel::util::FlxPoint Joystick_obj::calculateJoystick( ){
-	HX_STACK_FRAME("Joystick","calculateJoystick",0xbb47f830,"Joystick.calculateJoystick","Joystick.hx",61,0x21141762)
+	HX_STACK_FRAME("Joystick","calculateJoystick",0xbb47f830,"Joystick.calculateJoystick","Joystick.hx",63,0x21141762)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(62)
+	HX_STACK_LINE(64)
 	Float _g = ::flash::Lib_obj::get_current()->get_stage()->get_mouseX();		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(62)
+	HX_STACK_LINE(64)
 	Float _g1 = (Float(_g) / Float(this->gameZoom));		HX_STACK_VAR(_g1,"_g1");
-	HX_STACK_LINE(62)
+	HX_STACK_LINE(64)
 	Float _g2 = (this->originPoint->x - _g1);		HX_STACK_VAR(_g2,"_g2");
-	HX_STACK_LINE(62)
+	HX_STACK_LINE(64)
 	this->xDif = _g2;
-	HX_STACK_LINE(63)
-	Float _g3 = ::flash::Lib_obj::get_current()->get_stage()->get_mouseY();		HX_STACK_VAR(_g3,"_g3");
-	HX_STACK_LINE(63)
-	Float _g4 = (Float(_g3) / Float(this->gameZoom));		HX_STACK_VAR(_g4,"_g4");
-	HX_STACK_LINE(63)
-	Float _g5 = (this->originPoint->y - _g4);		HX_STACK_VAR(_g5,"_g5");
-	HX_STACK_LINE(63)
-	this->yDif = _g5;
 	HX_STACK_LINE(65)
+	Float _g3 = ::flash::Lib_obj::get_current()->get_stage()->get_mouseY();		HX_STACK_VAR(_g3,"_g3");
+	HX_STACK_LINE(65)
+	Float _g4 = (Float(_g3) / Float(this->gameZoom));		HX_STACK_VAR(_g4,"_g4");
+	HX_STACK_LINE(65)
+	Float _g5 = (this->originPoint->y - _g4);		HX_STACK_VAR(_g5,"_g5");
+	HX_STACK_LINE(65)
+	this->yDif = _g5;
+	HX_STACK_LINE(67)
 	if (((this->multiplier > (int)1))){
-		HX_STACK_LINE(66)
-		Float _g6 = ::Math_obj::abs((this->xDif * this->xDif));		HX_STACK_VAR(_g6,"_g6");
-		HX_STACK_LINE(66)
-		Float _g7 = ::Math_obj::abs((this->yDif * this->yDif));		HX_STACK_VAR(_g7,"_g7");
-		HX_STACK_LINE(66)
-		Float _g8 = (_g6 + _g7);		HX_STACK_VAR(_g8,"_g8");
-		HX_STACK_LINE(66)
-		Float _g9 = ::Math_obj::sqrt(_g8);		HX_STACK_VAR(_g9,"_g9");
-		HX_STACK_LINE(66)
-		this->hyp = _g9;
-		HX_STACK_LINE(67)
-		this->positionJostick();
 		HX_STACK_LINE(68)
-		hx::MultEq(this->xDif,this->multiplier);
+		Float _g6 = ::Math_obj::abs((this->xDif * this->xDif));		HX_STACK_VAR(_g6,"_g6");
+		HX_STACK_LINE(68)
+		Float _g7 = ::Math_obj::abs((this->yDif * this->yDif));		HX_STACK_VAR(_g7,"_g7");
+		HX_STACK_LINE(68)
+		Float _g8 = (_g6 + _g7);		HX_STACK_VAR(_g8,"_g8");
+		HX_STACK_LINE(68)
+		Float _g9 = ::Math_obj::sqrt(_g8);		HX_STACK_VAR(_g9,"_g9");
+		HX_STACK_LINE(68)
+		this->hyp = _g9;
 		HX_STACK_LINE(69)
+		this->positionJostick();
+		HX_STACK_LINE(70)
+		hx::MultEq(this->xDif,this->multiplier);
+		HX_STACK_LINE(71)
 		hx::MultEq(this->yDif,this->multiplier);
 	}
 	else{
-		HX_STACK_LINE(71)
+		HX_STACK_LINE(73)
 		this->positionJostick();
 	}
-	HX_STACK_LINE(73)
+	HX_STACK_LINE(75)
 	this->moveDirs->set_x((int)0);
-	HX_STACK_LINE(74)
-	this->moveDirs->set_y((int)0);
 	HX_STACK_LINE(76)
+	this->moveDirs->set_y((int)0);
+	HX_STACK_LINE(78)
 	if (((this->xDif == (int)0))){
-		HX_STACK_LINE(77)
+		HX_STACK_LINE(79)
 		this->moveDirs->set_x((int)0);
-		HX_STACK_LINE(78)
+		HX_STACK_LINE(80)
 		if (((this->yDif > (int)0))){
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(81)
 			this->moveDirs->set_y((int)-1);
 		}
-		HX_STACK_LINE(80)
+		HX_STACK_LINE(82)
 		if (((this->yDif < (int)0))){
-			HX_STACK_LINE(81)
+			HX_STACK_LINE(83)
 			this->moveDirs->set_y((int)1);
 		}
-		HX_STACK_LINE(82)
+		HX_STACK_LINE(84)
 		return this->moveDirs;
 	}
-	HX_STACK_LINE(85)
+	HX_STACK_LINE(87)
 	if (((this->yDif == (int)0))){
-		HX_STACK_LINE(86)
+		HX_STACK_LINE(88)
 		this->moveDirs->set_y((int)0);
-		HX_STACK_LINE(87)
+		HX_STACK_LINE(89)
 		if (((this->xDif > (int)0))){
-			HX_STACK_LINE(88)
+			HX_STACK_LINE(90)
 			this->moveDirs->set_x((int)-1);
 		}
-		HX_STACK_LINE(89)
+		HX_STACK_LINE(91)
 		if (((this->xDif < (int)0))){
-			HX_STACK_LINE(90)
+			HX_STACK_LINE(92)
 			this->moveDirs->set_x((int)1);
 		}
-		HX_STACK_LINE(91)
+		HX_STACK_LINE(93)
 		return this->moveDirs;
 	}
-	HX_STACK_LINE(94)
-	Float _g10 = ::Math_obj::abs((this->xDif * this->xDif));		HX_STACK_VAR(_g10,"_g10");
-	HX_STACK_LINE(94)
-	Float _g11 = ::Math_obj::abs((this->yDif * this->yDif));		HX_STACK_VAR(_g11,"_g11");
-	HX_STACK_LINE(94)
-	Float _g12 = (_g10 + _g11);		HX_STACK_VAR(_g12,"_g12");
-	HX_STACK_LINE(94)
-	Float _g13 = ::Math_obj::sqrt(_g12);		HX_STACK_VAR(_g13,"_g13");
-	HX_STACK_LINE(94)
-	this->hyp = _g13;
 	HX_STACK_LINE(96)
+	Float _g10 = ::Math_obj::abs((this->xDif * this->xDif));		HX_STACK_VAR(_g10,"_g10");
+	HX_STACK_LINE(96)
+	Float _g11 = ::Math_obj::abs((this->yDif * this->yDif));		HX_STACK_VAR(_g11,"_g11");
+	HX_STACK_LINE(96)
+	Float _g12 = (_g10 + _g11);		HX_STACK_VAR(_g12,"_g12");
+	HX_STACK_LINE(96)
+	Float _g13 = ::Math_obj::sqrt(_g12);		HX_STACK_VAR(_g13,"_g13");
+	HX_STACK_LINE(96)
+	this->hyp = _g13;
+	HX_STACK_LINE(98)
 	if (((this->hyp < this->moveIgnoreRange))){
-		HX_STACK_LINE(97)
+		HX_STACK_LINE(99)
 		return this->moveDirs;
 	}
-	HX_STACK_LINE(99)
+	HX_STACK_LINE(101)
 	Float _g14 = ::Math_obj::abs(this->hyp);		HX_STACK_VAR(_g14,"_g14");
-	HX_STACK_LINE(99)
+	HX_STACK_LINE(101)
 	if (((_g14 < this->maxDistance))){
-		HX_STACK_LINE(100)
-		this->moveDirs->set_x(((Float(this->hyp) / Float(this->maxDistance)) * (((this->xDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1))));
-		HX_STACK_LINE(101)
-		this->moveDirs->set_y(((Float(this->hyp) / Float(this->maxDistance)) * (((this->yDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1))));
 		HX_STACK_LINE(102)
+		this->moveDirs->set_x(((Float(this->hyp) / Float(this->maxDistance)) * (((this->xDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1))));
+		HX_STACK_LINE(103)
+		this->moveDirs->set_y(((Float(this->hyp) / Float(this->maxDistance)) * (((this->yDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1))));
+		HX_STACK_LINE(104)
 		return this->moveDirs;
 	}
-	HX_STACK_LINE(105)
+	HX_STACK_LINE(107)
 	this->moveDirs->set_x(((this->xDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1));
-	HX_STACK_LINE(106)
-	this->moveDirs->set_y(((this->yDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1));
 	HX_STACK_LINE(108)
+	this->moveDirs->set_y(((this->yDif * ((Float(this->moveSpeed) / Float(this->hyp)))) * (int)-1));
+	HX_STACK_LINE(110)
 	return this->moveDirs;
 }
 
@@ -338,29 +342,29 @@ HX_DEFINE_DYNAMIC_FUNC0(Joystick_obj,calculateJoystick,return )
 
 Void Joystick_obj::positionJostick( ){
 {
-		HX_STACK_FRAME("Joystick","positionJostick",0x30950930,"Joystick.positionJostick","Joystick.hx",111,0x21141762)
+		HX_STACK_FRAME("Joystick","positionJostick",0x30950930,"Joystick.positionJostick","Joystick.hx",113,0x21141762)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(112)
+		HX_STACK_LINE(114)
 		Float _g = ::Math_obj::abs(this->hyp);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(112)
+		HX_STACK_LINE(114)
 		if (((_g < this->maxDistance))){
-			HX_STACK_LINE(113)
+			HX_STACK_LINE(115)
 			Float _g1 = ::flash::Lib_obj::get_current()->get_stage()->get_mouseX();		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(113)
+			HX_STACK_LINE(115)
 			Float _g2 = (Float(_g1) / Float(this->gameZoom));		HX_STACK_VAR(_g2,"_g2");
-			HX_STACK_LINE(113)
+			HX_STACK_LINE(115)
 			this->set_x(_g2);
-			HX_STACK_LINE(114)
+			HX_STACK_LINE(116)
 			Float _g3 = ::flash::Lib_obj::get_current()->get_stage()->get_mouseY();		HX_STACK_VAR(_g3,"_g3");
-			HX_STACK_LINE(114)
+			HX_STACK_LINE(116)
 			Float _g4 = (Float(_g3) / Float(this->gameZoom));		HX_STACK_VAR(_g4,"_g4");
-			HX_STACK_LINE(114)
+			HX_STACK_LINE(116)
 			this->set_y(_g4);
 		}
 		else{
-			HX_STACK_LINE(117)
+			HX_STACK_LINE(119)
 			this->set_x(((((Float(this->maxDistance) / Float(this->hyp)) * this->xDif) * (int)-1) + this->originPoint->x));
-			HX_STACK_LINE(118)
+			HX_STACK_LINE(120)
 			this->set_y(((((Float(this->maxDistance) / Float(this->hyp)) * this->yDif) * (int)-1) + this->originPoint->y));
 		}
 	}
@@ -371,32 +375,32 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(Joystick_obj,positionJostick,(void))
 
 bool Joystick_obj::noMove( ){
-	HX_STACK_FRAME("Joystick","noMove",0x4a737144,"Joystick.noMove","Joystick.hx",122,0x21141762)
+	HX_STACK_FRAME("Joystick","noMove",0x4a737144,"Joystick.noMove","Joystick.hx",124,0x21141762)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(123)
+	HX_STACK_LINE(125)
 	if ((::Global_obj::UIopen)){
-		HX_STACK_LINE(124)
-		this->resetJoystick();
-		HX_STACK_LINE(125)
-		this->mouseDown = false;
 		HX_STACK_LINE(126)
-		return true;
-	}
-	HX_STACK_LINE(129)
-	if (((bool((bool((::flixel::FlxG_obj::mouse->y > (this->originPoint->y + this->mouseMaxY))) || bool((::flixel::FlxG_obj::mouse->y < (this->originPoint->y - this->mouseMaxY))))) || bool(((bool((::flixel::FlxG_obj::mouse->x > (this->originPoint->x + this->mouseMaxX))) || bool((::flixel::FlxG_obj::mouse->x < (this->originPoint->x - this->mouseMaxX))))))))){
-		HX_STACK_LINE(130)
 		this->resetJoystick();
-		HX_STACK_LINE(131)
+		HX_STACK_LINE(127)
+		this->mouseDown = false;
+		HX_STACK_LINE(128)
 		return true;
 	}
-	HX_STACK_LINE(134)
+	HX_STACK_LINE(131)
+	if (((bool((bool((::flixel::FlxG_obj::mouse->y > (this->originPoint->y + this->mouseMaxY))) || bool((::flixel::FlxG_obj::mouse->y < (this->originPoint->y - this->mouseMaxY))))) || bool(((bool((::flixel::FlxG_obj::mouse->x > (this->originPoint->x + this->mouseMaxX))) || bool((::flixel::FlxG_obj::mouse->x < (this->originPoint->x - this->mouseMaxX))))))))){
+		HX_STACK_LINE(132)
+		this->resetJoystick();
+		HX_STACK_LINE(133)
+		return true;
+	}
+	HX_STACK_LINE(136)
 	if ((::Global_obj::changingScreens)){
-		HX_STACK_LINE(135)
+		HX_STACK_LINE(137)
 		::Global_obj::move->set_x((int)0);
-		HX_STACK_LINE(136)
+		HX_STACK_LINE(138)
 		::Global_obj::move->set_y((int)0);
 	}
-	HX_STACK_LINE(139)
+	HX_STACK_LINE(141)
 	return false;
 }
 
@@ -405,15 +409,15 @@ HX_DEFINE_DYNAMIC_FUNC0(Joystick_obj,noMove,return )
 
 Void Joystick_obj::resetJoystick( ){
 {
-		HX_STACK_FRAME("Joystick","resetJoystick",0x122fae99,"Joystick.resetJoystick","Joystick.hx",142,0x21141762)
+		HX_STACK_FRAME("Joystick","resetJoystick",0x122fae99,"Joystick.resetJoystick","Joystick.hx",144,0x21141762)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(143)
-		this->set_x(this->originPoint->x);
-		HX_STACK_LINE(144)
-		this->set_y(this->originPoint->y);
 		HX_STACK_LINE(145)
-		::Global_obj::move->set_x((int)0);
+		this->set_x(this->originPoint->x);
 		HX_STACK_LINE(146)
+		this->set_y(this->originPoint->y);
+		HX_STACK_LINE(147)
+		::Global_obj::move->set_x((int)0);
+		HX_STACK_LINE(148)
 		::Global_obj::move->set_y((int)0);
 	}
 return null();

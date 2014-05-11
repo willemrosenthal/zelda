@@ -30,7 +30,7 @@
 
 Void Global_obj::__construct()
 {
-HX_STACK_FRAME("Global","new",0x2136c3f5,"Global.new","Global.hx",51,0xfa68b11b)
+HX_STACK_FRAME("Global","new",0x2136c3f5,"Global.new","Global.hx",52,0xfa68b11b)
 HX_STACK_THIS(this)
 {
 }
@@ -56,6 +56,8 @@ bool Global_obj::ini;
 ::flixel::util::FlxPoint Global_obj::zeroPoint;
 
 int Global_obj::tileSize;
+
+Array< int > Global_obj::gameTileSize;
 
 Float Global_obj::gameHeight;
 
@@ -97,8 +99,8 @@ Array< ::Dynamic > Global_obj::levels;
 
 Void Global_obj::levelStart( ){
 {
-		HX_STACK_FRAME("Global","levelStart",0x2fb32949,"Global.levelStart","Global.hx",47,0xfa68b11b)
-		HX_STACK_LINE(47)
+		HX_STACK_FRAME("Global","levelStart",0x2fb32949,"Global.levelStart","Global.hx",48,0xfa68b11b)
+		HX_STACK_LINE(48)
 		::Global_obj::ini = true;
 	}
 return null();
@@ -152,6 +154,7 @@ Dynamic Global_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"moveTouched") ) { return moveTouched; }
 		break;
 	case 12:
+		if (HX_FIELD_EQ(inName,"gameTileSize") ) { return gameTileSize; }
 		if (HX_FIELD_EQ(inName,"mouseEnabled") ) { return mouseEnabled; }
 		if (HX_FIELD_EQ(inName,"firstTouchId") ) { return firstTouchId; }
 		if (HX_FIELD_EQ(inName,"firstTouchTo") ) { return firstTouchTo; }
@@ -204,6 +207,7 @@ Dynamic Global_obj::__SetField(const ::String &inName,const Dynamic &inValue,boo
 		if (HX_FIELD_EQ(inName,"moveTouched") ) { moveTouched=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 12:
+		if (HX_FIELD_EQ(inName,"gameTileSize") ) { gameTileSize=inValue.Cast< Array< int > >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"mouseEnabled") ) { mouseEnabled=inValue.Cast< bool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"firstTouchId") ) { firstTouchId=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"firstTouchTo") ) { firstTouchTo=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
@@ -226,6 +230,7 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("ini"),
 	HX_CSTRING("zeroPoint"),
 	HX_CSTRING("tileSize"),
+	HX_CSTRING("gameTileSize"),
 	HX_CSTRING("gameHeight"),
 	HX_CSTRING("gameWidth"),
 	HX_CSTRING("mouseEnabled"),
@@ -260,6 +265,7 @@ static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Global_obj::ini,"ini");
 	HX_MARK_MEMBER_NAME(Global_obj::zeroPoint,"zeroPoint");
 	HX_MARK_MEMBER_NAME(Global_obj::tileSize,"tileSize");
+	HX_MARK_MEMBER_NAME(Global_obj::gameTileSize,"gameTileSize");
 	HX_MARK_MEMBER_NAME(Global_obj::gameHeight,"gameHeight");
 	HX_MARK_MEMBER_NAME(Global_obj::gameWidth,"gameWidth");
 	HX_MARK_MEMBER_NAME(Global_obj::mouseEnabled,"mouseEnabled");
@@ -287,6 +293,7 @@ static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(Global_obj::ini,"ini");
 	HX_VISIT_MEMBER_NAME(Global_obj::zeroPoint,"zeroPoint");
 	HX_VISIT_MEMBER_NAME(Global_obj::tileSize,"tileSize");
+	HX_VISIT_MEMBER_NAME(Global_obj::gameTileSize,"gameTileSize");
 	HX_VISIT_MEMBER_NAME(Global_obj::gameHeight,"gameHeight");
 	HX_VISIT_MEMBER_NAME(Global_obj::gameWidth,"gameWidth");
 	HX_VISIT_MEMBER_NAME(Global_obj::mouseEnabled,"mouseEnabled");
@@ -329,6 +336,7 @@ void Global_obj::__register()
 void Global_obj::__boot()
 {
 	tileSize= (int)16;
+	gameTileSize= Array_obj< int >::__new().Add((int)0).Add((int)0);
 	firstTouchId= (int)-1;
 	secondTouchId= (int)-1;
 	c= Array_obj< int >::__new().Add((int)0).Add((int)0);

@@ -127,19 +127,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.hx" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/Player.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="5" selection-start="2799" selection-end="2799" vertical-scroll-proportion="0.9098712" vertical-offset="515" max-vertical-offset="1680">
+            <state line="70" column="70" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1680">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Joystick.hx" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Joystick.hx" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/Joystick.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="61" selection-start="815" selection-end="815" vertical-scroll-proportion="-17.307692" vertical-offset="0" max-vertical-offset="2295">
+            <state line="35" column="35" selection-start="960" selection-end="960" vertical-scroll-proportion="0.46093065" vertical-offset="0" max-vertical-offset="2325">
               <folding />
             </state>
           </provider>
@@ -167,13 +167,13 @@
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/HelloWorld.iml" />
         <option value="$PROJECT_DIR$/Project.xml" />
-        <option value="$PROJECT_DIR$/source/Joystick.hx" />
         <option value="$PROJECT_DIR$/source/Main.hx" />
         <option value="$PROJECT_DIR$/source/Calcs.hx" />
         <option value="$PROJECT_DIR$/source/Calc.hx" />
         <option value="$PROJECT_DIR$/source/Global.hx" />
         <option value="$PROJECT_DIR$/source/PlayState.hx" />
         <option value="$PROJECT_DIR$/source/Player.hx" />
+        <option value="$PROJECT_DIR$/source/Joystick.hx" />
       </list>
     </option>
   </component>
@@ -622,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/Joystick.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="61" selection-start="815" selection-end="815" vertical-scroll-proportion="-17.307692" vertical-offset="0" max-vertical-offset="2295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/Calc.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="39" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
@@ -666,7 +659,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="5" selection-start="2799" selection-end="2799" vertical-scroll-proportion="0.9098712" vertical-offset="515" max-vertical-offset="1680">
+        <state line="70" column="70" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Joystick.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="35" selection-start="960" selection-end="960" vertical-scroll-proportion="0.46093065" vertical-offset="0" max-vertical-offset="2325">
           <folding />
         </state>
       </provider>

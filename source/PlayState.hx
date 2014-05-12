@@ -1,5 +1,9 @@
 package;
 
+import ui.MultitouchField;
+import ui.Joystick;
+import ui.AButton;
+import ui.BButton;
 import flixel.FlxSprite;
 import flixel.util.FlxPoint;
 import flash.Lib;
@@ -62,6 +66,10 @@ class PlayState extends FlxState
     private var lBox:FlxSprite;
     private var blackBox:FlxSprite;
     private var bars:Array<FlxSprite>;
+
+    private var a:AButton;
+    private var b:BButton;
+    private var mtf:MultitouchField;
 
 
     private var gameZoom:Float = 3;
@@ -167,7 +175,7 @@ class PlayState extends FlxState
         hud = new FlxGroup();
         add(hud);
 
-        var joyPosX:Float = Global.gameWidth * 0.3;
+        var joyPosX:Float = Global.gameWidth * 0.27;
         var joyPosY:Float = Global.gameHeight * 0.82;
 
 
@@ -181,6 +189,16 @@ class PlayState extends FlxState
 
         joystick = new Joystick(joyPosX, joyPosY, joystickBG.width);
         hud.add(joystick);
+
+        a = new AButton(90,180);
+        hud.add(a);
+
+        b = new BButton(120,210);
+        hud.add(b);
+
+        mtf = new MultitouchField();
+        add(mtf);
+        //FlxG.stage.addChild(mtf);
     }
 
 

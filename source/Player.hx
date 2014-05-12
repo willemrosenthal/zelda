@@ -113,13 +113,13 @@ class Player extends FlxSprite
         if (xChange > 0)
             cx += width;
 
-        cy += height * 0.1;
+        cy += height * 0.3;
         if (Calc.getHitType(cx + xChange, cy) == 1)
             return true;
-        cy += height * 0.4;
+        cy += height * 0.325;
         if (Calc.getHitType(cx + xChange, cy) == 1)
             return true;
-        cy += height * 0.4;
+        cy += height * 0.325;
         if (Calc.getHitType(cx + xChange, cy) == 1)
             return true;
         return false;
@@ -127,9 +127,9 @@ class Player extends FlxSprite
     }
     private function hitVert():Bool {
         cx = x;
-        cy = y;
+        cy = y + height * 0.3;
         if (yChange > 0)
-            cy += height;
+            cy = y + height * .95;
 
         cx += width * 0.1;
         if (Calc.getHitType(cx, cy + yChange) == 1)

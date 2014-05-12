@@ -32,6 +32,24 @@ class Global {
     static public var changingScreens:Bool;
     static public var nextDir:String;   // direction of next screen
 
+    //buttons
+    static public var a:Bool;
+    static public var b:Bool;
+    static public var start:Bool;
+
+    //multitouch
+    static public var T1id:Int = -1;
+    static public var T1:FlxPoint;
+    static public var T1Use:String = "";
+    static public var T2id:Int = -1;
+    static public var T2:FlxPoint;
+    static public var T2Use:String = "";
+    static public var T3id:Int = -1;
+    static public var T3:FlxPoint;
+    static public var T3Use:String = "";
+
+
+
 
 	static public var move:FlxPoint = new FlxPoint(0,0);
 
@@ -47,9 +65,5 @@ class Global {
 	static public function levelStart():Void
 	{
 		ini = true;
-	}
-
-
-	public function new() {
 	}
 }

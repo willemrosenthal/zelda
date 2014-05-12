@@ -103,10 +103,8 @@
       <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="296" column="31" selection-start="7806" selection-end="7806" vertical-scroll-proportion="-27.653847" vertical-offset="3721" max-vertical-offset="4890">
-              <folding>
-                <marker date="1399860174000" expanded="true" signature="8231:8492" placeholder="{...}" />
-              </folding>
+            <state line="88" column="34" selection-start="1933" selection-end="1933" vertical-scroll-proportion="24.846153" vertical-offset="1966" max-vertical-offset="4890">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +130,7 @@
       <file leaf-file-name="Player.hx" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/Player.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="50" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.09130816" vertical-offset="1186" max-vertical-offset="2475">
+            <state line="139" column="25" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.6575944" vertical-offset="1336" max-vertical-offset="2505">
               <folding />
             </state>
           </provider>
@@ -173,8 +171,8 @@
         <option value="$PROJECT_DIR$/source/Calcs.hx" />
         <option value="$PROJECT_DIR$/source/Joystick.hx" />
         <option value="$PROJECT_DIR$/source/Global.hx" />
-        <option value="$PROJECT_DIR$/source/PlayState.hx" />
         <option value="$PROJECT_DIR$/source/Calc.hx" />
+        <option value="$PROJECT_DIR$/source/PlayState.hx" />
         <option value="$PROJECT_DIR$/source/Player.hx" />
       </list>
     </option>
@@ -652,15 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="31" selection-start="7806" selection-end="7806" vertical-scroll-proportion="-27.653847" vertical-offset="3721" max-vertical-offset="4890">
-          <folding>
-            <marker date="1399860174000" expanded="true" signature="8231:8492" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/Calc.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="37" selection-start="782" selection-end="792" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
@@ -668,9 +657,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="34" selection-start="1933" selection-end="1933" vertical-scroll-proportion="24.846153" vertical-offset="1966" max-vertical-offset="4890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="50" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.09130816" vertical-offset="1186" max-vertical-offset="2475">
+        <state line="139" column="25" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.6575944" vertical-offset="1336" max-vertical-offset="2505">
           <folding />
         </state>
       </provider>

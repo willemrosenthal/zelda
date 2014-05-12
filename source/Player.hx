@@ -113,12 +113,13 @@ class Player extends FlxSprite
         if (xChange > 0)
             cx += width;
 
+        cy += height * 0.1;
         if (Calc.getHitType(cx + xChange, cy) == 1)
             return true;
-        cy += height * 0.5;
+        cy += height * 0.4;
         if (Calc.getHitType(cx + xChange, cy) == 1)
             return true;
-        cy += height * 0.5;
+        cy += height * 0.4;
         if (Calc.getHitType(cx + xChange, cy) == 1)
             return true;
         return false;
@@ -130,12 +131,13 @@ class Player extends FlxSprite
         if (yChange > 0)
             cy += height;
 
+        cx += width * 0.1;
         if (Calc.getHitType(cx, cy + yChange) == 1)
             return true;
-        cx += width * 0.5;
+        cx += width * 0.4;
         if (Calc.getHitType(cx, cy + yChange) == 1)
             return true;
-        cx += width * 0.5;
+        cx += width * 0.4;
         if (Calc.getHitType(cx, cy + yChange) == 1)
             return true;
         return false;

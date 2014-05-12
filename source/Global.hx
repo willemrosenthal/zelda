@@ -27,6 +27,7 @@ class Global {
     static public var c:Array<Int> = [0,0];
     static public var n:Array<Int> = [0,0];
 	static public var cMap:Array<Array<Int>>;   // current level
+    static public var hMap:Array<Array<Int>>;   // hit map
     static public var tMap:FlxTilemap;   // current level
     static public var changingScreens:Bool;
     static public var nextDir:String;   // direction of next screen

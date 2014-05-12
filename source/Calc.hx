@@ -22,7 +22,14 @@ class Calc {
         pt = getTilePos(X,Y);
         if (Global.cMap.length > pt.y && Global.cMap[Std.int(pt.y)].length > pt.x)
             return Global.cMap[Std.int(pt.y)][Std.int(pt.x)];
-        else return 0;
+        else return -1;
+    }
+    static public function getHitType(X:Float, Y:Float):Int
+    {
+        pt = getTilePos(X,Y);
+        if (Global.hMap.length > pt.y && Global.hMap[Std.int(pt.y)].length > pt.x)
+            return Global.hMap[Std.int(pt.y)][Std.int(pt.x)];
+        else return -1;
     }
 
     static public function getTileValue(X:Float, Y:Float):FlxPoint

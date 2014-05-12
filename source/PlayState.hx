@@ -270,9 +270,10 @@ class PlayState extends FlxState
         buildNextMap();
     }
 
-    var dataArray:Array<Int>;
-    var finalArray:Array<Array<Int>>;
-    var arrayPlaceCounter:Int = 0;
+    private var dataArray:Array<Int>;
+    private var finalArray:Array<Array<Int>>;
+    private var arrayPlaceCounter:Int = 0;
+
     private function convertMapData():Void {
         dataArray = new Array();
         arrayPlaceCounter = 0;
@@ -286,12 +287,35 @@ class PlayState extends FlxState
                 arrayPlaceCounter++;
             }
         }
-    Global.cMap = finalArray;
-    /*
-    for (m in 0...Global.cMap.length) {
-        trace(Global.cMap[m]);
+        Global.cMap = finalArray;
+        buildHitMap();
+    }
+
+    private function buildHitMap():Void {
+        Global.hMap = finalArray;
+        for (n in 0...mapHeight) {
+            for (q in 0...mapWidth) {
+                Global.hMap[n][q] = isItSolid(Global.hMap[n][q]);
+            }
         }
-    */
+    }
+
+    private function isItSolid(n:Int):Int {
+        if ((n <= 5 && n > 0) || (n <= 15 && n > 10) || (n <= 25 && n > 20) || (n <= 35 && n > 30) || (n <= 45 && n > 40) || (n <= 55 && n > 50) || (n <= 65 && n > 60) || (n <= 75 && n > 70))
+            return 0;
+        return 1;
+    }
+
+    private function traceMaps():Void {
+        trace("TILE MAP: ");
+        for (m in 0...Global.cMap.length) {
+            trace(Global.cMap[m]);
+        }
+        trace("");
+        trace("HIT MAP: ");
+        for (m in 0...Global.hMap.length) {
+            trace(Global.hMap[m]);
+        }
     }
 
 }

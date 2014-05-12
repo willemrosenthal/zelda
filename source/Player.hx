@@ -15,6 +15,8 @@ class Player extends FlxSprite
     private var xChange:Float;
     private var yChange:Float;
 
+    public var knock:Bool;
+
 	public function new(X:Float, Y:Float)
 	{
 		super(X, Y);
@@ -53,11 +55,15 @@ class Player extends FlxSprite
         }
 
         // animations
-        if (Global.move.x == 0 || Global.move.y == 0)
+        if (knock)
+        {
+            animation.play(cAnim);
+        }
+        else if (Global.move.x == 0 || Global.move.y == 0)
         {
             animation.play("stop_" + cAnim);
         }
-        if (Math.abs(speed.x) > Math.abs(speed.y))
+        else if (Math.abs(speed.x) > Math.abs(speed.y))
         {
             if (speed.x > 0)
                 animation.play("right");
@@ -82,14 +88,61 @@ class Player extends FlxSprite
 
         stopAtEdges();
 
+
+        if (hitSides())
+            xChange = 0;
+        if (hitVert())
+            yChange = 0;
+
+
         x += xChange;
         y += yChange;
 
+        //trace(quadHitCheck());
 
         //trace(Calc.getTileType((x + height * 0.5),(y + height * 0.5)));
 	}
 
-    private function stopAtEdges():Void{
+
+
+    var cx:Float;   // check x
+    var cy:Float;   // check y
+    private function hitSides():Bool {
+        cx = x;
+        cy = y;
+        if (xChange > 0)
+            cx += width;
+
+        if (Calc.getHitType(cx + xChange, cy) == 1)
+            return true;
+        cy += height * 0.5;
+        if (Calc.getHitType(cx + xChange, cy) == 1)
+            return true;
+        cy += height * 0.5;
+        if (Calc.getHitType(cx + xChange, cy) == 1)
+            return true;
+        return false;
+
+    }
+    private function hitVert():Bool {
+        cx = x;
+        cy = y;
+        if (yChange > 0)
+            cy += height;
+
+        if (Calc.getHitType(cx, cy + yChange) == 1)
+            return true;
+        cx += width * 0.5;
+        if (Calc.getHitType(cx, cy + yChange) == 1)
+            return true;
+        cx += width * 0.5;
+        if (Calc.getHitType(cx, cy + yChange) == 1)
+            return true;
+        return false;
+    }
+
+
+    private function stopAtEdges():Void {
 
         // left
         if (xChange < 0 && (x + xChange)/Global.tileSize < 0 && Global.c[1] == 0)

@@ -41,6 +41,9 @@ class HXCPP_CLASS_ATTRIBUTES  Calc_obj : public hx::Object{
 		static int getTileType( Float X,Float Y);
 		static Dynamic getTileType_dyn();
 
+		static int getHitType( Float X,Float Y);
+		static Dynamic getHitType_dyn();
+
 		static ::flixel::util::FlxPoint getTileValue( Float X,Float Y);
 		static Dynamic getTileValue_dyn();
 

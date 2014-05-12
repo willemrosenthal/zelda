@@ -58,30 +58,36 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/joystick_ring_big.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/player.png", __ASSET__assets_images_player_png);
 		type.set ("assets/images/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("assets/levels/0.txt", __ASSET__assets_levels_0_txt);
-		type.set ("assets/levels/0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/1.txt", __ASSET__assets_levels_1_txt);
-		type.set ("assets/levels/1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/10.txt", __ASSET__assets_levels_10_txt);
-		type.set ("assets/levels/10.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/11.txt", __ASSET__assets_levels_11_txt);
-		type.set ("assets/levels/11.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/2.txt", __ASSET__assets_levels_2_txt);
-		type.set ("assets/levels/2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/3.txt", __ASSET__assets_levels_3_txt);
-		type.set ("assets/levels/3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/4.txt", __ASSET__assets_levels_4_txt);
-		type.set ("assets/levels/4.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/5.txt", __ASSET__assets_levels_5_txt);
-		type.set ("assets/levels/5.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/6.txt", __ASSET__assets_levels_6_txt);
-		type.set ("assets/levels/6.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/7.txt", __ASSET__assets_levels_7_txt);
-		type.set ("assets/levels/7.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/8.txt", __ASSET__assets_levels_8_txt);
-		type.set ("assets/levels/8.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("assets/levels/9.txt", __ASSET__assets_levels_9_txt);
-		type.set ("assets/levels/9.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/images/player.psd", __ASSET__assets_images_player_psd);
+		type.set ("assets/images/player.psd", Reflect.field (AssetType, "binary".toUpperCase ()));
+		className.set ("assets/images/player2.png", __ASSET__assets_images_player2_png);
+		type.set ("assets/images/player2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/levels/0-0.txt", __ASSET__assets_levels_0_0_txt);
+		type.set ("assets/levels/0-0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-1.txt", __ASSET__assets_levels_0_1_txt);
+		type.set ("assets/levels/0-1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-2.txt", __ASSET__assets_levels_0_2_txt);
+		type.set ("assets/levels/0-2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-3.txt", __ASSET__assets_levels_0_3_txt);
+		type.set ("assets/levels/0-3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-0.txt", __ASSET__assets_levels_1_0_txt);
+		type.set ("assets/levels/1-0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-1.txt", __ASSET__assets_levels_1_1_txt);
+		type.set ("assets/levels/1-1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-2.txt", __ASSET__assets_levels_1_2_txt);
+		type.set ("assets/levels/1-2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-3.txt", __ASSET__assets_levels_1_3_txt);
+		type.set ("assets/levels/1-3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/2-0.txt", __ASSET__assets_levels_2_0_txt);
+		type.set ("assets/levels/2-0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/2-1.txt", __ASSET__assets_levels_2_1_txt);
+		type.set ("assets/levels/2-1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/2-2.txt", __ASSET__assets_levels_2_2_txt);
+		type.set ("assets/levels/2-2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/2-3.txt", __ASSET__assets_levels_2_3_txt);
+		type.set ("assets/levels/2-3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/MapCSV_NewMap_NewLayer.txt", __ASSET__assets_levels_mapcsv_newmap_newlayer_txt);
+		type.set ("assets/levels/MapCSV_NewMap_NewLayer.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("assets/sounds/sounds-go-here.txt", __ASSET__assets_sounds_sounds_go_here_txt);
@@ -109,18 +115,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		addExternal("assets/images/joystick_ring.png", "image", "assets/images/joystick_ring.png");
 		addExternal("assets/images/joystick_ring_big.png", "image", "assets/images/joystick_ring_big.png");
 		addExternal("assets/images/player.png", "image", "assets/images/player.png");
-		addExternal("assets/levels/0.txt", "text", "assets/levels/0.txt");
-		addExternal("assets/levels/1.txt", "text", "assets/levels/1.txt");
-		addExternal("assets/levels/10.txt", "text", "assets/levels/10.txt");
-		addExternal("assets/levels/11.txt", "text", "assets/levels/11.txt");
-		addExternal("assets/levels/2.txt", "text", "assets/levels/2.txt");
-		addExternal("assets/levels/3.txt", "text", "assets/levels/3.txt");
-		addExternal("assets/levels/4.txt", "text", "assets/levels/4.txt");
-		addExternal("assets/levels/5.txt", "text", "assets/levels/5.txt");
-		addExternal("assets/levels/6.txt", "text", "assets/levels/6.txt");
-		addExternal("assets/levels/7.txt", "text", "assets/levels/7.txt");
-		addExternal("assets/levels/8.txt", "text", "assets/levels/8.txt");
-		addExternal("assets/levels/9.txt", "text", "assets/levels/9.txt");
+		addExternal("assets/images/player.psd", "binary", "assets/images/player.psd");
+		addExternal("assets/images/player2.png", "image", "assets/images/player2.png");
+		addExternal("assets/levels/0-0.txt", "text", "assets/levels/0-0.txt");
+		addExternal("assets/levels/0-1.txt", "text", "assets/levels/0-1.txt");
+		addExternal("assets/levels/0-2.txt", "text", "assets/levels/0-2.txt");
+		addExternal("assets/levels/0-3.txt", "text", "assets/levels/0-3.txt");
+		addExternal("assets/levels/1-0.txt", "text", "assets/levels/1-0.txt");
+		addExternal("assets/levels/1-1.txt", "text", "assets/levels/1-1.txt");
+		addExternal("assets/levels/1-2.txt", "text", "assets/levels/1-2.txt");
+		addExternal("assets/levels/1-3.txt", "text", "assets/levels/1-3.txt");
+		addExternal("assets/levels/2-0.txt", "text", "assets/levels/2-0.txt");
+		addExternal("assets/levels/2-1.txt", "text", "assets/levels/2-1.txt");
+		addExternal("assets/levels/2-2.txt", "text", "assets/levels/2-2.txt");
+		addExternal("assets/levels/2-3.txt", "text", "assets/levels/2-3.txt");
+		addExternal("assets/levels/MapCSV_NewMap_NewLayer.txt", "text", "assets/levels/MapCSV_NewMap_NewLayer.txt");
 		addExternal("assets/music/music-goes-here.txt", "text", "assets/music/music-goes-here.txt");
 		addExternal("assets/sounds/sounds-go-here.txt", "text", "assets/sounds/sounds-go-here.txt");
 		addExternal("assets/tilesets/1.png", "image", "assets/tilesets/1.png");
@@ -168,41 +177,50 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/images/player.png", __ASSET__assets_images_player_png);
 		type.set ("assets/images/player.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
-		className.set ("assets/levels/0.txt", __ASSET__assets_levels_0_txt);
-		type.set ("assets/levels/0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/images/player.psd", __ASSET__assets_images_player_psd);
+		type.set ("assets/images/player.psd", Reflect.field (AssetType, "binary".toUpperCase ()));
 		
-		className.set ("assets/levels/1.txt", __ASSET__assets_levels_1_txt);
-		type.set ("assets/levels/1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/images/player2.png", __ASSET__assets_images_player2_png);
+		type.set ("assets/images/player2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
-		className.set ("assets/levels/10.txt", __ASSET__assets_levels_10_txt);
-		type.set ("assets/levels/10.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-0.txt", __ASSET__assets_levels_0_0_txt);
+		type.set ("assets/levels/0-0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/11.txt", __ASSET__assets_levels_11_txt);
-		type.set ("assets/levels/11.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-1.txt", __ASSET__assets_levels_0_1_txt);
+		type.set ("assets/levels/0-1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/2.txt", __ASSET__assets_levels_2_txt);
-		type.set ("assets/levels/2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-2.txt", __ASSET__assets_levels_0_2_txt);
+		type.set ("assets/levels/0-2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/3.txt", __ASSET__assets_levels_3_txt);
-		type.set ("assets/levels/3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/0-3.txt", __ASSET__assets_levels_0_3_txt);
+		type.set ("assets/levels/0-3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/4.txt", __ASSET__assets_levels_4_txt);
-		type.set ("assets/levels/4.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-0.txt", __ASSET__assets_levels_1_0_txt);
+		type.set ("assets/levels/1-0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/5.txt", __ASSET__assets_levels_5_txt);
-		type.set ("assets/levels/5.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-1.txt", __ASSET__assets_levels_1_1_txt);
+		type.set ("assets/levels/1-1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/6.txt", __ASSET__assets_levels_6_txt);
-		type.set ("assets/levels/6.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-2.txt", __ASSET__assets_levels_1_2_txt);
+		type.set ("assets/levels/1-2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/7.txt", __ASSET__assets_levels_7_txt);
-		type.set ("assets/levels/7.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/1-3.txt", __ASSET__assets_levels_1_3_txt);
+		type.set ("assets/levels/1-3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/8.txt", __ASSET__assets_levels_8_txt);
-		type.set ("assets/levels/8.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/2-0.txt", __ASSET__assets_levels_2_0_txt);
+		type.set ("assets/levels/2-0.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
-		className.set ("assets/levels/9.txt", __ASSET__assets_levels_9_txt);
-		type.set ("assets/levels/9.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("assets/levels/2-1.txt", __ASSET__assets_levels_2_1_txt);
+		type.set ("assets/levels/2-1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		
+		className.set ("assets/levels/2-2.txt", __ASSET__assets_levels_2_2_txt);
+		type.set ("assets/levels/2-2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		
+		className.set ("assets/levels/2-3.txt", __ASSET__assets_levels_2_3_txt);
+		type.set ("assets/levels/2-3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		
+		className.set ("assets/levels/MapCSV_NewMap_NewLayer.txt", __ASSET__assets_levels_mapcsv_newmap_newlayer_txt);
+		type.set ("assets/levels/MapCSV_NewMap_NewLayer.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
 		type.set ("assets/music/music-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
@@ -815,18 +833,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__assets_images_joystick_ring_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_joystick_ring_big_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_player_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_levels_0_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_1_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_10_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_11_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_2_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_3_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_4_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_5_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_6_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_7_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_8_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_levels_9_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_images_player_psd extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_images_player2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep class __ASSET__assets_levels_0_0_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_0_1_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_0_2_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_0_3_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_1_0_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_1_1_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_1_2_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_1_3_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_2_0_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_2_1_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_2_2_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_2_3_txt extends flash.utils.ByteArray { }
+@:keep class __ASSET__assets_levels_mapcsv_newmap_newlayer_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_tilesets_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -836,6 +857,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
 
 
 
@@ -882,18 +906,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:bitmap("assets/images/joystick_ring.png") class __ASSET__assets_images_joystick_ring_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/joystick_ring_big.png") class __ASSET__assets_images_joystick_ring_big_png extends flash.display.BitmapData {}
 @:bitmap("assets/images/player.png") class __ASSET__assets_images_player_png extends flash.display.BitmapData {}
-@:file("assets/levels/0.txt") class __ASSET__assets_levels_0_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/1.txt") class __ASSET__assets_levels_1_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/10.txt") class __ASSET__assets_levels_10_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/11.txt") class __ASSET__assets_levels_11_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/2.txt") class __ASSET__assets_levels_2_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/3.txt") class __ASSET__assets_levels_3_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/4.txt") class __ASSET__assets_levels_4_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/5.txt") class __ASSET__assets_levels_5_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/6.txt") class __ASSET__assets_levels_6_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/7.txt") class __ASSET__assets_levels_7_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/8.txt") class __ASSET__assets_levels_8_txt extends flash.utils.ByteArray {}
-@:file("assets/levels/9.txt") class __ASSET__assets_levels_9_txt extends flash.utils.ByteArray {}
+@:file("assets/images/player.psd") class __ASSET__assets_images_player_psd extends flash.utils.ByteArray {}
+@:bitmap("assets/images/player2.png") class __ASSET__assets_images_player2_png extends flash.display.BitmapData {}
+@:file("assets/levels/0-0.txt") class __ASSET__assets_levels_0_0_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/0-1.txt") class __ASSET__assets_levels_0_1_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/0-2.txt") class __ASSET__assets_levels_0_2_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/0-3.txt") class __ASSET__assets_levels_0_3_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/1-0.txt") class __ASSET__assets_levels_1_0_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/1-1.txt") class __ASSET__assets_levels_1_1_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/1-2.txt") class __ASSET__assets_levels_1_2_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/1-3.txt") class __ASSET__assets_levels_1_3_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/2-0.txt") class __ASSET__assets_levels_2_0_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/2-1.txt") class __ASSET__assets_levels_2_1_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/2-2.txt") class __ASSET__assets_levels_2_2_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/2-3.txt") class __ASSET__assets_levels_2_3_txt extends flash.utils.ByteArray {}
+@:file("assets/levels/MapCSV_NewMap_NewLayer.txt") class __ASSET__assets_levels_mapcsv_newmap_newlayer_txt extends flash.utils.ByteArray {}
 @:file("assets/music/music-goes-here.txt") class __ASSET__assets_music_music_goes_here_txt extends flash.utils.ByteArray {}
 @:file("assets/sounds/sounds-go-here.txt") class __ASSET__assets_sounds_sounds_go_here_txt extends flash.utils.ByteArray {}
 @:bitmap("assets/tilesets/1.png") class __ASSET__assets_tilesets_1_png extends flash.display.BitmapData {}

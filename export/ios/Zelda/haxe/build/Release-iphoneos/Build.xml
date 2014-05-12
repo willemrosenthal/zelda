@@ -2809,6 +2809,7 @@
    <depend name="include/Reflect.h"/>
   </file>
   <file name="src/Player.cpp">
+   <depend name="include/Calc.h"/>
    <depend name="include/Global.h"/>
    <depend name="include/Player.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
@@ -2836,6 +2837,7 @@
    <depend name="include/flixel/group/FlxTypedGroup.h"/>
    <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
    <depend name="include/flixel/tile/FlxTilemap.h"/>
+   <depend name="include/haxe/Log.h"/>
    <depend name="include/openfl/Assets.h"/>
   </file>
   <file name="src/flixel/FlxState.cpp">
@@ -3079,6 +3081,15 @@
   <file name="src/Date.cpp">
    <depend name="include/Date.h"/>
    <depend name="include/Std.h"/>
+  </file>
+  <file name="src/Calc.cpp">
+   <depend name="include/Calc.h"/>
+   <depend name="include/Global.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
+   <depend name="include/flixel/util/FlxPoint.h"/>
   </file>
   <file name="src/DocumentClass.cpp">
    <depend name="include/DocumentClass.h"/>

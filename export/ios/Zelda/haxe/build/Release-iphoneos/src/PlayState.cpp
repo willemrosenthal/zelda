@@ -39,6 +39,9 @@
 #ifndef INCLUDED_flixel_tile_FlxTilemap
 #include <flixel/tile/FlxTilemap.h>
 #endif
+#ifndef INCLUDED_haxe_Log
+#include <haxe/Log.h>
+#endif
 #ifndef INCLUDED_openfl_Assets
 #include <openfl/Assets.h>
 #endif
@@ -109,7 +112,7 @@ Void PlayState_obj::create( ){
 		HX_STACK_LINE(87)
 		this->buildMap();
 		HX_STACK_LINE(89)
-		::Player _g1 = ::Player_obj::__new((int)30,(int)30);		HX_STACK_VAR(_g1,"_g1");
+		::Player _g1 = ::Player_obj::__new((4.5 * ::Global_obj::tileSize),(3.5 * ::Global_obj::tileSize));		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(89)
 		this->player = _g1;
 		HX_STACK_LINE(90)
@@ -151,7 +154,7 @@ Void PlayState_obj::buildMap( ){
 		HX_STACK_FRAME("PlayState","buildMap",0x02761f3f,"PlayState.buildMap","PlayState.hx",107,0xb30d7781)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(108)
-		this->mapData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::c->__get((int)0)).StaticCast< Array< int > >()->__get(::Global_obj::c->__get((int)1))) + HX_CSTRING(".txt"));
+		this->mapData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::c->__get((int)0)).StaticCast< Array< ::String > >()->__get(::Global_obj::c->__get((int)1))) + HX_CSTRING(".txt"));
 		HX_STACK_LINE(109)
 		this->tileSet = HX_CSTRING("assets/tilesets/1.png");
 		HX_STACK_LINE(113)
@@ -178,7 +181,7 @@ Void PlayState_obj::buildNextMap( ){
 		HX_STACK_FRAME("PlayState","buildNextMap",0xd2cf398c,"PlayState.buildNextMap","PlayState.hx",121,0xb30d7781)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(122)
-		this->nextData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::n->__get((int)0)).StaticCast< Array< int > >()->__get(::Global_obj::n->__get((int)1))) + HX_CSTRING(".txt"));
+		this->nextData = ((HX_CSTRING("assets/levels/") + ::Global_obj::levels->__get(::Global_obj::n->__get((int)0)).StaticCast< Array< ::String > >()->__get(::Global_obj::n->__get((int)1))) + HX_CSTRING(".txt"));
 		HX_STACK_LINE(123)
 		this->nextSet = HX_CSTRING("assets/tilesets/1.png");
 		HX_STACK_LINE(125)
@@ -556,72 +559,194 @@ HX_DEFINE_DYNAMIC_FUNC2(PlayState_obj,touchEdge,(void))
 
 Void PlayState_obj::convertMapData( ){
 {
-		HX_STACK_FRAME("PlayState","convertMapData",0x44f0ab24,"PlayState.convertMapData","PlayState.hx",276,0xb30d7781)
+		HX_STACK_FRAME("PlayState","convertMapData",0x44f0ab24,"PlayState.convertMapData","PlayState.hx",277,0xb30d7781)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(277)
-		Array< int > _g = Array_obj< int >::__new();		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(277)
-		this->dataArray = _g;
 		HX_STACK_LINE(278)
+		Array< int > _g = Array_obj< int >::__new();		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(278)
+		this->dataArray = _g;
+		HX_STACK_LINE(279)
 		this->arrayPlaceCounter = (int)0;
-		HX_STACK_LINE(279)
+		HX_STACK_LINE(280)
 		Array< int > _g1 = this->levelMap->getData(null());		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(279)
+		HX_STACK_LINE(280)
 		this->dataArray = _g1;
-		HX_STACK_LINE(281)
-		Array< ::Dynamic > _g2 = Array_obj< ::Dynamic >::__new();		HX_STACK_VAR(_g2,"_g2");
-		HX_STACK_LINE(281)
-		this->finalArray = _g2;
 		HX_STACK_LINE(282)
+		Array< ::Dynamic > _g2 = Array_obj< ::Dynamic >::__new();		HX_STACK_VAR(_g2,"_g2");
+		HX_STACK_LINE(282)
+		this->finalArray = _g2;
+		HX_STACK_LINE(283)
 		{
-			HX_STACK_LINE(282)
+			HX_STACK_LINE(283)
 			int _g11 = (int)0;		HX_STACK_VAR(_g11,"_g11");
-			HX_STACK_LINE(282)
+			HX_STACK_LINE(283)
 			int _g3 = this->mapHeight;		HX_STACK_VAR(_g3,"_g3");
-			HX_STACK_LINE(282)
+			HX_STACK_LINE(283)
 			while((true)){
-				HX_STACK_LINE(282)
+				HX_STACK_LINE(283)
 				if ((!(((_g11 < _g3))))){
-					HX_STACK_LINE(282)
+					HX_STACK_LINE(283)
 					break;
 				}
-				HX_STACK_LINE(282)
+				HX_STACK_LINE(283)
 				int n = (_g11)++;		HX_STACK_VAR(n,"n");
-				HX_STACK_LINE(283)
-				Array< int > _g31 = Array_obj< int >::__new();		HX_STACK_VAR(_g31,"_g31");
-				HX_STACK_LINE(283)
-				this->finalArray->push(_g31);
 				HX_STACK_LINE(284)
+				Array< int > _g31 = Array_obj< int >::__new();		HX_STACK_VAR(_g31,"_g31");
+				HX_STACK_LINE(284)
+				this->finalArray->push(_g31);
+				HX_STACK_LINE(285)
 				{
-					HX_STACK_LINE(284)
+					HX_STACK_LINE(285)
 					int _g32 = (int)0;		HX_STACK_VAR(_g32,"_g32");
-					HX_STACK_LINE(284)
+					HX_STACK_LINE(285)
 					int _g21 = this->mapWidth;		HX_STACK_VAR(_g21,"_g21");
-					HX_STACK_LINE(284)
+					HX_STACK_LINE(285)
 					while((true)){
-						HX_STACK_LINE(284)
+						HX_STACK_LINE(285)
 						if ((!(((_g32 < _g21))))){
-							HX_STACK_LINE(284)
+							HX_STACK_LINE(285)
 							break;
 						}
-						HX_STACK_LINE(284)
-						int q = (_g32)++;		HX_STACK_VAR(q,"q");
 						HX_STACK_LINE(285)
-						this->finalArray->__get(n).StaticCast< Array< int > >()->push(this->dataArray->__get(this->arrayPlaceCounter));
+						int q = (_g32)++;		HX_STACK_VAR(q,"q");
 						HX_STACK_LINE(286)
+						this->finalArray->__get(n).StaticCast< Array< int > >()->push(this->dataArray->__get(this->arrayPlaceCounter));
+						HX_STACK_LINE(287)
 						(this->arrayPlaceCounter)++;
 					}
 				}
 			}
 		}
-		HX_STACK_LINE(289)
+		HX_STACK_LINE(290)
 		::Global_obj::cMap = this->finalArray;
+		HX_STACK_LINE(291)
+		this->buildHitMap();
 	}
 return null();
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,convertMapData,(void))
+
+Void PlayState_obj::buildHitMap( ){
+{
+		HX_STACK_FRAME("PlayState","buildHitMap",0xb0d72546,"PlayState.buildHitMap","PlayState.hx",294,0xb30d7781)
+		HX_STACK_THIS(this)
+		HX_STACK_LINE(295)
+		::Global_obj::hMap = this->finalArray;
+		HX_STACK_LINE(296)
+		{
+			HX_STACK_LINE(296)
+			int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
+			HX_STACK_LINE(296)
+			int _g = this->mapHeight;		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(296)
+			while((true)){
+				HX_STACK_LINE(296)
+				if ((!(((_g1 < _g))))){
+					HX_STACK_LINE(296)
+					break;
+				}
+				HX_STACK_LINE(296)
+				int n = (_g1)++;		HX_STACK_VAR(n,"n");
+				HX_STACK_LINE(297)
+				{
+					HX_STACK_LINE(297)
+					int _g3 = (int)0;		HX_STACK_VAR(_g3,"_g3");
+					HX_STACK_LINE(297)
+					int _g2 = this->mapWidth;		HX_STACK_VAR(_g2,"_g2");
+					HX_STACK_LINE(297)
+					while((true)){
+						HX_STACK_LINE(297)
+						if ((!(((_g3 < _g2))))){
+							HX_STACK_LINE(297)
+							break;
+						}
+						HX_STACK_LINE(297)
+						int q = (_g3)++;		HX_STACK_VAR(q,"q");
+						HX_STACK_LINE(298)
+						::Global_obj::hMap->__get(n).StaticCast< Array< int > >()[q] = this->isItSolid(::Global_obj::hMap->__get(n).StaticCast< Array< int > >()->__get(q));
+					}
+				}
+			}
+		}
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,buildHitMap,(void))
+
+int PlayState_obj::isItSolid( int n){
+	HX_STACK_FRAME("PlayState","isItSolid",0xc3f7f525,"PlayState.isItSolid","PlayState.hx",303,0xb30d7781)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(n,"n")
+	HX_STACK_LINE(304)
+	if (((bool((bool((bool((bool((bool((bool((bool((bool((n <= (int)5)) && bool((n > (int)0)))) || bool((bool((n <= (int)15)) && bool((n > (int)10)))))) || bool((bool((n <= (int)25)) && bool((n > (int)20)))))) || bool((bool((n <= (int)35)) && bool((n > (int)30)))))) || bool((bool((n <= (int)45)) && bool((n > (int)40)))))) || bool((bool((n <= (int)55)) && bool((n > (int)50)))))) || bool((bool((n <= (int)65)) && bool((n > (int)60)))))) || bool((bool((n <= (int)75)) && bool((n > (int)70))))))){
+		HX_STACK_LINE(305)
+		return (int)0;
+	}
+	HX_STACK_LINE(306)
+	return (int)1;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(PlayState_obj,isItSolid,return )
+
+Void PlayState_obj::traceMaps( ){
+{
+		HX_STACK_FRAME("PlayState","traceMaps",0xfbcbe32b,"PlayState.traceMaps","PlayState.hx",309,0xb30d7781)
+		HX_STACK_THIS(this)
+		HX_STACK_LINE(310)
+		::haxe::Log_obj::trace(HX_CSTRING("TILE MAP: "),hx::SourceInfo(HX_CSTRING("PlayState.hx"),310,HX_CSTRING("PlayState"),HX_CSTRING("traceMaps")));
+		HX_STACK_LINE(311)
+		{
+			HX_STACK_LINE(311)
+			int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
+			HX_STACK_LINE(311)
+			int _g = ::Global_obj::cMap->length;		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(311)
+			while((true)){
+				HX_STACK_LINE(311)
+				if ((!(((_g1 < _g))))){
+					HX_STACK_LINE(311)
+					break;
+				}
+				HX_STACK_LINE(311)
+				int m = (_g1)++;		HX_STACK_VAR(m,"m");
+				HX_STACK_LINE(312)
+				::haxe::Log_obj::trace(::Global_obj::cMap->__get(m).StaticCast< Array< int > >(),hx::SourceInfo(HX_CSTRING("PlayState.hx"),312,HX_CSTRING("PlayState"),HX_CSTRING("traceMaps")));
+			}
+		}
+		HX_STACK_LINE(314)
+		::haxe::Log_obj::trace(HX_CSTRING(""),hx::SourceInfo(HX_CSTRING("PlayState.hx"),314,HX_CSTRING("PlayState"),HX_CSTRING("traceMaps")));
+		HX_STACK_LINE(315)
+		::haxe::Log_obj::trace(HX_CSTRING("HIT MAP: "),hx::SourceInfo(HX_CSTRING("PlayState.hx"),315,HX_CSTRING("PlayState"),HX_CSTRING("traceMaps")));
+		HX_STACK_LINE(316)
+		{
+			HX_STACK_LINE(316)
+			int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
+			HX_STACK_LINE(316)
+			int _g = ::Global_obj::hMap->length;		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(316)
+			while((true)){
+				HX_STACK_LINE(316)
+				if ((!(((_g1 < _g))))){
+					HX_STACK_LINE(316)
+					break;
+				}
+				HX_STACK_LINE(316)
+				int m = (_g1)++;		HX_STACK_VAR(m,"m");
+				HX_STACK_LINE(317)
+				::haxe::Log_obj::trace(::Global_obj::hMap->__get(m).StaticCast< Array< int > >(),hx::SourceInfo(HX_CSTRING("PlayState.hx"),317,HX_CSTRING("PlayState"),HX_CSTRING("traceMaps")));
+			}
+		}
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,traceMaps,(void))
 
 
 PlayState_obj::PlayState_obj()
@@ -760,6 +885,8 @@ Dynamic PlayState_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"mapHeight") ) { return mapHeight; }
 		if (HX_FIELD_EQ(inName,"touchEdge") ) { return touchEdge_dyn(); }
 		if (HX_FIELD_EQ(inName,"dataArray") ) { return dataArray; }
+		if (HX_FIELD_EQ(inName,"isItSolid") ) { return isItSolid_dyn(); }
+		if (HX_FIELD_EQ(inName,"traceMaps") ) { return traceMaps_dyn(); }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"joystickBG") ) { return joystickBG; }
@@ -768,6 +895,7 @@ Dynamic PlayState_obj::__Field(const ::String &inName,bool inCallProp)
 	case 11:
 		if (HX_FIELD_EQ(inName,"moveScreens") ) { return moveScreens_dyn(); }
 		if (HX_FIELD_EQ(inName,"finishSroll") ) { return finishSroll_dyn(); }
+		if (HX_FIELD_EQ(inName,"buildHitMap") ) { return buildHitMap_dyn(); }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"xScrollSpeed") ) { return xScrollSpeed; }
@@ -974,6 +1102,9 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("finalArray"),
 	HX_CSTRING("arrayPlaceCounter"),
 	HX_CSTRING("convertMapData"),
+	HX_CSTRING("buildHitMap"),
+	HX_CSTRING("isItSolid"),
+	HX_CSTRING("traceMaps"),
 	String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {

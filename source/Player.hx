@@ -21,7 +21,7 @@ class Player extends FlxSprite
 	{
 		super(X, Y);
 
-        loadGraphic("assets/images/player.png", true, 16,16);
+        loadGraphic("assets/images/player.png", true, 16,17);
         animation.add("down", [0,1],6);
         animation.add("left", [2,3],6);
         animation.add("up", [4,5],6);

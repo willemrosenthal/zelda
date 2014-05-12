@@ -86,7 +86,7 @@ class PlayState extends FlxState
 
         buildMap();
 
-        player = new Player(50,100);
+        player = new Player(4.5 * Global.tileSize,3.5 * Global.tileSize);
         add(player);
 
         setupHud();

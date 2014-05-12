@@ -53,6 +53,7 @@ class HXCPP_CLASS_ATTRIBUTES  Global_obj : public hx::Object{
 		static Array< int > c;
 		static Array< int > n;
 		static Array< ::Dynamic > cMap;
+		static Array< ::Dynamic > hMap;
 		static ::flixel::tile::FlxTilemap tMap;
 		static bool changingScreens;
 		static ::String nextDir;

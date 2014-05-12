@@ -27,7 +27,7 @@
 
 Void Calc_obj::__construct()
 {
-HX_STACK_FRAME("Calc","new",0x07c7e427,"Calc.new","Calc.hx",38,0x1b961d29)
+HX_STACK_FRAME("Calc","new",0x07c7e427,"Calc.new","Calc.hx",45,0x1b961d29)
 HX_STACK_THIS(this)
 {
 }
@@ -121,7 +121,7 @@ int Calc_obj::getTileType( Float X,Float Y){
 	}
 	else{
 		HX_STACK_LINE(25)
-		return (int)0;
+		return (int)-1;
 	}
 	HX_STACK_LINE(23)
 	return (int)0;
@@ -130,11 +130,41 @@ int Calc_obj::getTileType( Float X,Float Y){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Calc_obj,getTileType,return )
 
-::flixel::util::FlxPoint Calc_obj::getTileValue( Float X,Float Y){
-	HX_STACK_FRAME("Calc","getTileValue",0x373f3546,"Calc.getTileValue","Calc.hx",30,0x1b961d29)
+int Calc_obj::getHitType( Float X,Float Y){
+	HX_STACK_FRAME("Calc","getHitType",0xf5ab13d0,"Calc.getHitType","Calc.hx",28,0x1b961d29)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
+	HX_STACK_LINE(29)
+	::flixel::util::FlxPoint _g = ::Calc_obj::getTilePos(X,Y);		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(29)
+	::Calc_obj::pt = _g;
 	HX_STACK_LINE(30)
+	if (((bool((::Global_obj::hMap->length > ::Calc_obj::pt->y)) && bool((::Global_obj::hMap->__get(::Std_obj::_int(::Calc_obj::pt->y)).StaticCast< Array< int > >()->length > ::Calc_obj::pt->x))))){
+		HX_STACK_LINE(31)
+		int _g1 = ::Std_obj::_int(::Calc_obj::pt->y);		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(31)
+		Array< int > _g2 = ::Global_obj::hMap->__get(_g1).StaticCast< Array< int > >();		HX_STACK_VAR(_g2,"_g2");
+		HX_STACK_LINE(31)
+		int _g3 = ::Std_obj::_int(::Calc_obj::pt->x);		HX_STACK_VAR(_g3,"_g3");
+		HX_STACK_LINE(31)
+		return _g2->__get(_g3);
+	}
+	else{
+		HX_STACK_LINE(32)
+		return (int)-1;
+	}
+	HX_STACK_LINE(30)
+	return (int)0;
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(Calc_obj,getHitType,return )
+
+::flixel::util::FlxPoint Calc_obj::getTileValue( Float X,Float Y){
+	HX_STACK_FRAME("Calc","getTileValue",0x373f3546,"Calc.getTileValue","Calc.hx",37,0x1b961d29)
+	HX_STACK_ARG(X,"X")
+	HX_STACK_ARG(Y,"Y")
+	HX_STACK_LINE(37)
 	return ::flixel::util::FlxPoint_obj::__new((Float(X) / Float(::Global_obj::tileSize)),(Float(Y) / Float(::Global_obj::tileSize)));
 }
 
@@ -142,10 +172,10 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(Calc_obj,getTileType,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Calc_obj,getTileValue,return )
 
 ::flixel::util::FlxPoint Calc_obj::getTilePos( Float X,Float Y){
-	HX_STACK_FRAME("Calc","getTilePos",0x58958429,"Calc.getTilePos","Calc.hx",35,0x1b961d29)
+	HX_STACK_FRAME("Calc","getTilePos",0x58958429,"Calc.getTilePos","Calc.hx",42,0x1b961d29)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
-	HX_STACK_LINE(35)
+	HX_STACK_LINE(42)
 	return ::flixel::util::FlxPoint_obj::__new((Float(X) / Float(::Global_obj::tileSize)),(Float(Y) / Float(::Global_obj::tileSize)));
 }
 
@@ -164,6 +194,7 @@ Dynamic Calc_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"pt") ) { return pt; }
 		break;
 	case 10:
+		if (HX_FIELD_EQ(inName,"getHitType") ) { return getHitType_dyn(); }
 		if (HX_FIELD_EQ(inName,"getTilePos") ) { return getTilePos_dyn(); }
 		break;
 	case 11:
@@ -198,6 +229,7 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("plusOrMinus"),
 	HX_CSTRING("pt"),
 	HX_CSTRING("getTileType"),
+	HX_CSTRING("getHitType"),
 	HX_CSTRING("getTileValue"),
 	HX_CSTRING("getTilePos"),
 	String(null()) };

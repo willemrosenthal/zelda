@@ -43,7 +43,16 @@ class HXCPP_CLASS_ATTRIBUTES  Player_obj : public ::flixel::FlxSprite_obj{
 		::String cAnim;
 		Float xChange;
 		Float yChange;
+		bool knock;
 		virtual Void update( );
+
+		Float cx;
+		Float cy;
+		virtual bool hitSides( );
+		Dynamic hitSides_dyn();
+
+		virtual bool hitVert( );
+		Dynamic hitVert_dyn();
 
 		virtual Void stopAtEdges( );
 		Dynamic stopAtEdges_dyn();

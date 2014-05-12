@@ -30,7 +30,7 @@
 
 Void Global_obj::__construct()
 {
-HX_STACK_FRAME("Global","new",0x2136c3f5,"Global.new","Global.hx",52,0xfa68b11b)
+HX_STACK_FRAME("Global","new",0x2136c3f5,"Global.new","Global.hx",53,0xfa68b11b)
 HX_STACK_THIS(this)
 {
 }
@@ -85,6 +85,8 @@ Array< int > Global_obj::n;
 
 Array< ::Dynamic > Global_obj::cMap;
 
+Array< ::Dynamic > Global_obj::hMap;
+
 ::flixel::tile::FlxTilemap Global_obj::tMap;
 
 bool Global_obj::changingScreens;
@@ -99,8 +101,8 @@ Array< ::Dynamic > Global_obj::levels;
 
 Void Global_obj::levelStart( ){
 {
-		HX_STACK_FRAME("Global","levelStart",0x2fb32949,"Global.levelStart","Global.hx",48,0xfa68b11b)
-		HX_STACK_LINE(48)
+		HX_STACK_FRAME("Global","levelStart",0x2fb32949,"Global.levelStart","Global.hx",49,0xfa68b11b)
+		HX_STACK_LINE(49)
 		::Global_obj::ini = true;
 	}
 return null();
@@ -127,6 +129,7 @@ Dynamic Global_obj::__Field(const ::String &inName,bool inCallProp)
 	case 4:
 		if (HX_FIELD_EQ(inName,"game") ) { return game; }
 		if (HX_FIELD_EQ(inName,"cMap") ) { return cMap; }
+		if (HX_FIELD_EQ(inName,"hMap") ) { return hMap; }
 		if (HX_FIELD_EQ(inName,"tMap") ) { return tMap; }
 		if (HX_FIELD_EQ(inName,"move") ) { return move; }
 		break;
@@ -181,6 +184,7 @@ Dynamic Global_obj::__SetField(const ::String &inName,const Dynamic &inValue,boo
 	case 4:
 		if (HX_FIELD_EQ(inName,"game") ) { game=inValue.Cast< ::flixel::group::FlxGroup >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"cMap") ) { cMap=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"hMap") ) { hMap=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"tMap") ) { tMap=inValue.Cast< ::flixel::tile::FlxTilemap >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"move") ) { move=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
 		break;
@@ -244,6 +248,7 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("c"),
 	HX_CSTRING("n"),
 	HX_CSTRING("cMap"),
+	HX_CSTRING("hMap"),
 	HX_CSTRING("tMap"),
 	HX_CSTRING("changingScreens"),
 	HX_CSTRING("nextDir"),
@@ -279,6 +284,7 @@ static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Global_obj::c,"c");
 	HX_MARK_MEMBER_NAME(Global_obj::n,"n");
 	HX_MARK_MEMBER_NAME(Global_obj::cMap,"cMap");
+	HX_MARK_MEMBER_NAME(Global_obj::hMap,"hMap");
 	HX_MARK_MEMBER_NAME(Global_obj::tMap,"tMap");
 	HX_MARK_MEMBER_NAME(Global_obj::changingScreens,"changingScreens");
 	HX_MARK_MEMBER_NAME(Global_obj::nextDir,"nextDir");
@@ -307,6 +313,7 @@ static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(Global_obj::c,"c");
 	HX_VISIT_MEMBER_NAME(Global_obj::n,"n");
 	HX_VISIT_MEMBER_NAME(Global_obj::cMap,"cMap");
+	HX_VISIT_MEMBER_NAME(Global_obj::hMap,"hMap");
 	HX_VISIT_MEMBER_NAME(Global_obj::tMap,"tMap");
 	HX_VISIT_MEMBER_NAME(Global_obj::changingScreens,"changingScreens");
 	HX_VISIT_MEMBER_NAME(Global_obj::nextDir,"nextDir");
@@ -343,6 +350,6 @@ void Global_obj::__boot()
 	n= Array_obj< int >::__new().Add((int)0).Add((int)0);
 	move= ::flixel::util::FlxPoint_obj::__new((int)0,(int)0);
 	UIopen= false;
-	levels= Array_obj< ::Dynamic >::__new().Add(Array_obj< int >::__new().Add((int)0).Add((int)1).Add((int)2).Add((int)3)).Add(Array_obj< int >::__new().Add((int)4).Add((int)5).Add((int)6).Add((int)7)).Add(Array_obj< int >::__new().Add((int)8).Add((int)9).Add((int)10).Add((int)11));
+	levels= Array_obj< ::Dynamic >::__new().Add(Array_obj< ::String >::__new().Add(HX_CSTRING("0-0")).Add(HX_CSTRING("0-1")).Add(HX_CSTRING("0-2")).Add(HX_CSTRING("0-3"))).Add(Array_obj< ::String >::__new().Add(HX_CSTRING("1-0")).Add(HX_CSTRING("1-1")).Add(HX_CSTRING("1-2")).Add(HX_CSTRING("1-3"))).Add(Array_obj< ::String >::__new().Add(HX_CSTRING("2-0")).Add(HX_CSTRING("2-1")).Add(HX_CSTRING("2-2")).Add(HX_CSTRING("2-3")));
 }
 

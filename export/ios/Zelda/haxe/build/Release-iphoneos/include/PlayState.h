@@ -106,6 +106,15 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 		virtual Void convertMapData( );
 		Dynamic convertMapData_dyn();
 
+		virtual Void buildHitMap( );
+		Dynamic buildHitMap_dyn();
+
+		virtual int isItSolid( int n);
+		Dynamic isItSolid_dyn();
+
+		virtual Void traceMaps( );
+		Dynamic traceMaps_dyn();
+
 };
 
 

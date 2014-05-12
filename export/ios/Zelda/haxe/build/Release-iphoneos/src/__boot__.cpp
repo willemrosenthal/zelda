@@ -317,6 +317,7 @@
 #include <DefaultAssetLibrary.h>
 #include <openfl/AssetLibrary.h>
 #include <Date.h>
+#include <Calc.h>
 #include <DocumentClass.h>
 #include <Main.h>
 #include <flash/display/Sprite.h>
@@ -661,6 +662,7 @@ hx::RegisterResources( hx::GetResources() );
 ::DefaultAssetLibrary_obj::__register();
 ::openfl::AssetLibrary_obj::__register();
 ::Date_obj::__register();
+::Calc_obj::__register();
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
 ::flash::display::Sprite_obj::__register();
@@ -710,6 +712,7 @@ hx::RegisterResources( hx::GetResources() );
 ::flash::display::Sprite_obj::__boot();
 ::Main_obj::__boot();
 ::DocumentClass_obj::__boot();
+::Calc_obj::__boot();
 ::Date_obj::__boot();
 ::openfl::AssetLibrary_obj::__boot();
 ::DefaultAssetLibrary_obj::__boot();

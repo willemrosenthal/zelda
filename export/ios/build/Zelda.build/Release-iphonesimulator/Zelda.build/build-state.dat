@@ -1,598 +1,0 @@
-TZelda
-v6
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Info.plist /Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist
-cCpResource Zelda/assets build/Release-iphonesimulator/Zelda.app/assets
-cCpResource Zelda/Icon.png build/Release-iphonesimulator/Zelda.app/Icon.png
-cCpResource Zelda/Icon@2x.png build/Release-iphonesimulator/Zelda.app/Icon@2x.png
-cCpResource Zelda/Icon-72.png build/Release-iphonesimulator/Zelda.app/Icon-72.png
-cCpResource Zelda/Icon-72@2x.png build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png
-cCpResource Zelda/Icon-60.png build/Release-iphonesimulator/Zelda.app/Icon-60.png
-cCpResource Zelda/Icon-60@2x.png build/Release-iphonesimulator/Zelda.app/Icon-60@2x.png
-cCpResource Zelda/Icon-76.png build/Release-iphonesimulator/Zelda.app/Icon-76.png
-cCpResource Zelda/Icon-76@2x.png build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png
-cCpResource Zelda/Default.png build/Release-iphonesimulator/Zelda.app/Default.png
-cCpResource Zelda/Default@2x.png build/Release-iphonesimulator/Zelda.app/Default@2x.png
-cCpResource Zelda/Default-Portrait.png build/Release-iphonesimulator/Zelda.app/Default-Portrait.png
-cCpResource Zelda/Default-Portrait@2x.png build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png
-cCpResource Zelda/Default-Landscape.png build/Release-iphonesimulator/Zelda.app/Default-Landscape.png
-cCpResource Zelda/Default-Landscape@2x.png build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png
-cCpResource Zelda/Default-568h@2x.png build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png
-cProcessPCH++ /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch Zelda/Zelda-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o /Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda normal i386
-cGenerateDSYMFile /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda
-cTouch /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
-c000000005349595C0000000000000198
-t1397315932
-s408
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist
-c00000000531F735800000000000003B4
-t1394570072
-s948
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/CoreServices/SystemVersion.plist
-c00000000531F735C000000000000019E
-t1394570076
-s414
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-c00000000531F735D0000000000484210
-t1394570077
-s4735504
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-c00000000531F735D0000000000904120
-t1394570077
-s9453856
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-c00000000531F735C00000000000FB140
-t1394570076
-s1028416
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c00000000534959320000000000446820
-t1397315890
-s4483104
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreMotion.framework/CoreMotion
-c00000000531F735D00000000001D2FF0
-t1394570077
-s1912816
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c00000000531F735D000000000088D8C0
-t1394570077
-s8968384
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-c00000000531F735E0000000000799E30
-t1394570078
-s7970352
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenAL.framework/OpenAL
-c00000000531F735E000000000007C0D0
-t1394570078
-s508112
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
-c00000000531F735E0000000000037680
-t1394570078
-s226944
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-c00000000531F735E000000000048F720
-t1394570078
-s4781856
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c00000000531F73600000000001F1DE10
-t1394570080
-s32628240
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm
-c00000000536E9E560000000000000384
-t1399758422
-s900
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default-568h@2x.png
-c00000000536E9DF70000000000000892
-t1399758327
-s2194
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default-Landscape.png
-c00000000536E9DF7000000000000093F
-t1399758327
-s2367
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default-Landscape@2x.png
-c00000000536E9DF7000000000000242F
-t1399758327
-s9263
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default-Portrait.png
-c00000000536E9DF7000000000000093F
-t1399758327
-s2367
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default-Portrait@2x.png
-c00000000536E9DF7000000000000242F
-t1399758327
-s9263
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default.png
-c00000000536E9DF7000000000000020E
-t1399758327
-s526
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Default@2x.png
-c00000000536E9DF7000000000000074A
-t1399758327
-s1866
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon-60.png
-c00000000536E9DF70000000000000558
-t1399758327
-s1368
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon-60@2x.png
-c00000000536E9DF7000000000000096F
-t1399758327
-s2415
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon-72.png
-c00000000536E9DF70000000000000609
-t1399758327
-s1545
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon-72@2x.png
-c00000000536E9DF70000000000000B1B
-t1399758327
-s2843
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon-76.png
-c00000000536E9DF70000000000000638
-t1399758327
-s1592
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon-76@2x.png
-c00000000536E9DF70000000000000B47
-t1399758327
-s2887
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon.png
-c00000000536E9DF700000000000004C1
-t1399758327
-s1217
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Icon@2x.png
-c00000000536E9DF700000000000008CA
-t1399758327
-s2250
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist
-c00000000536E9DF80000000000000A63
-t1399758328
-s2659
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Prefix.pch
-c00000000536E9DF80000000000000139
-t1399758328
-s313
-
-N/Users/willem/Projects/zelda/export/ios/Zelda/assets
-c00000000536E9DF80000000000000132
-t1399758328
-s306
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app
-t1399758423
-s714
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM
-t2
-s0
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png
-t1399758422
-s2194
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Landscape.png
-t1399758422
-s2367
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png
-t1399758422
-s9263
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Portrait.png
-t1399758422
-s2367
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png
-t1399758422
-s9263
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default.png
-t1399758422
-s526
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default@2x.png
-t1399758422
-s1866
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-60.png
-t1399758422
-s1368
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-60@2x.png
-t1399758422
-s2415
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-72.png
-t1399758422
-s1545
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png
-t1399758422
-s2843
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-76.png
-t1399758422
-s1592
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png
-t1399758422
-s2887
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon.png
-t1399758422
-s1217
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon@2x.png
-t1399758422
-s2250
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Info.plist
-t1399758422
-s1542
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/PkgInfo
-t1399758422
-s8
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda
-t1399758423
-s7711164
-
-N/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/assets
-t1399758422
-s306
-
-N/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o
-t1399758422
-s2912
-
-N/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Zelda.LinkFileList
-c00000000536E9E560000000000000079
-t1399758422
-s121
-
-N/var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch
-t1399758422
-s224672
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesc03fb1d6d51eb941^23bcc1d6d51eb941^---0#1#1#--18"Check dependencies36"F2A56038-A8D6-47B6-B26C-7CDB7DC15A93-
-
-CCompileC build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o /Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s421451222.801449
-e421451222.831607
-r1
-xCompileC
-xbuild/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o
-x/Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm187"[1mCompileC[0m build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o [1mZelda/Classes/Main.mm[0m normal i386 c++ com.apple.compilers.llvm.clang.1_0.compilerae47cdd6d51eb941^4be6d4d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm0000000000000000^3322"[1mCompileC[0m build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o [1mZelda/Classes/Main.mm[0m normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/willem/Projects/zelda/export/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu++11 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5 -iquote /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-generated-files.hmap -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-own-target-headers.hmap -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-all-target-headers.hmap -iquote /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-project-headers.hmap -I/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/DerivedSources/i386 -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/DerivedSources -F/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch -MMD -MT dependencies -MF /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.d --serialize-diagnostics /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.dia -c /Users/willem/Projects/zelda/export/ios/Zelda/Classes/Main.mm -o /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o36"EBA3FDEB-5334-4C8F-BD7A-38951730387D-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default-568h@2x.png build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png
-s421451222.775691
-e421451222.776671
-r1
-xCpResource
-xZelda/Default-568h@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Default-568h@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png104"[1mCpResource[0m Zelda/Default-568h@2x.png build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png32acc6d6d51eb941^5fd4c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@106"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png0034cc6bddffdf42^812"[1mCpResource[0m Zelda/Default-568h@2x.png build/Release-iphonesimulator/Zelda.app/Default-568h@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default-568h@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"77AA8AB6-BC4F-41B1-A8FA-B8287BADE3C8-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default-Landscape.png build/Release-iphonesimulator/Zelda.app/Default-Landscape.png
-s421451222.774714
-e421451222.776181
-r1
-xCpResource
-xZelda/Default-Landscape.png
-xbuild/Release-iphonesimulator/Zelda.app/Default-Landscape.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Release-iphonesimulator/Zelda.app/Default-Landscape.png108"[1mCpResource[0m Zelda/Default-Landscape.png build/Release-iphonesimulator/Zelda.app/Default-Landscape.png9582c6d6d51eb941^74b4c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@108"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Landscape.png0034cc6bddffdf42^818"[1mCpResource[0m Zelda/Default-Landscape.png build/Release-iphonesimulator/Zelda.app/Default-Landscape.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default-Landscape.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"32C3F682-F48D-477D-A790-D7E354A20AC9-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default-Landscape@2x.png build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png
-s421451222.775367
-e421451222.776485
-r1
-xCpResource
-xZelda/Default-Landscape@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Copy build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png114"[1mCpResource[0m Zelda/Default-Landscape@2x.png build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png629dc6d6d51eb941^0cc8c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png0034cc6bddffdf42^827"[1mCpResource[0m Zelda/Default-Landscape@2x.png build/Release-iphonesimulator/Zelda.app/Default-Landscape@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default-Landscape@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"6439FEFF-B65B-4206-9CC0-C4E8B39FE96E-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default-Portrait.png build/Release-iphonesimulator/Zelda.app/Default-Portrait.png
-s421451222.773767
-e421451222.775136
-r1
-xCpResource
-xZelda/Default-Portrait.png
-xbuild/Release-iphonesimulator/Zelda.app/Default-Portrait.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Copy build/Release-iphonesimulator/Zelda.app/Default-Portrait.png106"[1mCpResource[0m Zelda/Default-Portrait.png build/Release-iphonesimulator/Zelda.app/Default-Portrait.png8f36c6d6d51eb941^7c80c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@107"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Portrait.png0034cc6bddffdf42^815"[1mCpResource[0m Zelda/Default-Portrait.png build/Release-iphonesimulator/Zelda.app/Default-Portrait.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default-Portrait.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"A3959527-7F57-4936-9142-D07D3A34D894-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default-Portrait@2x.png build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png
-s421451222.774184
-e421451222.775537
-r1
-xCpResource
-xZelda/Default-Portrait@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Copy build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png112"[1mCpResource[0m Zelda/Default-Portrait@2x.png build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png014fc6d6d51eb941^dd98c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png0034cc6bddffdf42^824"[1mCpResource[0m Zelda/Default-Portrait@2x.png build/Release-iphonesimulator/Zelda.app/Default-Portrait@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default-Portrait@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"C76074D1-C296-4625-9FA2-B54083B87576-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default.png build/Release-iphonesimulator/Zelda.app/Default.png
-s421451222.773039
-e421451222.774273
-r1
-xCpResource
-xZelda/Default.png
-xbuild/Release-iphonesimulator/Zelda.app/Default.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Release-iphonesimulator/Zelda.app/Default.png88"[1mCpResource[0m Zelda/Default.png build/Release-iphonesimulator/Zelda.app/Default.pngee05c6d6d51eb941^164ec6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default.png0034cc6bddffdf42^788"[1mCpResource[0m Zelda/Default.png build/Release-iphonesimulator/Zelda.app/Default.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"C42D7A4B-C3EA-40C4-BC5C-C7330FD6F294-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Default@2x.png build/Release-iphonesimulator/Zelda.app/Default@2x.png
-s421451222.773402
-e421451222.774647
-r1
-xCpResource
-xZelda/Default@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Default@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Release-iphonesimulator/Zelda.app/Default@2x.png94"[1mCpResource[0m Zelda/Default@2x.png build/Release-iphonesimulator/Zelda.app/Default@2x.png3f1ac6d6d51eb941^0569c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Default@2x.png0034cc6bddffdf42^797"[1mCpResource[0m Zelda/Default@2x.png build/Release-iphonesimulator/Zelda.app/Default@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Default@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"597268E2-BDDB-4542-8D04-F28A254FEB2A-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon-60.png build/Release-iphonesimulator/Zelda.app/Icon-60.png
-s421451222.771174
-e421451222.772622
-r1
-xCpResource
-xZelda/Icon-60.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon-60.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Release-iphonesimulator/Zelda.app/Icon-60.png88"[1mCpResource[0m Zelda/Icon-60.png build/Release-iphonesimulator/Zelda.app/Icon-60.png988ac5d6d51eb941^54fec5d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-60.png0034cc6bddffdf42^788"[1mCpResource[0m Zelda/Icon-60.png build/Release-iphonesimulator/Zelda.app/Icon-60.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon-60.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"6D994360-4ECF-4C9A-ACE1-FE02B26AE617-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon-60@2x.png build/Release-iphonesimulator/Zelda.app/Icon-60@2x.png
-s421451222.771347
-e421451222.772834
-r1
-xCpResource
-xZelda/Icon-60@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon-60@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Release-iphonesimulator/Zelda.app/Icon-60@2x.png94"[1mCpResource[0m Zelda/Icon-60@2x.png build/Release-iphonesimulator/Zelda.app/Icon-60@2x.pnga297c5d6d51eb941^c616c6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-60@2x.png0034cc6bddffdf42^797"[1mCpResource[0m Zelda/Icon-60@2x.png build/Release-iphonesimulator/Zelda.app/Icon-60@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon-60@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"A14C6055-2490-4847-A80D-79808279AB98-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon-72.png build/Release-iphonesimulator/Zelda.app/Icon-72.png
-s421451222.770252
-e421451222.771619
-r1
-xCpResource
-xZelda/Icon-72.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon-72.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Release-iphonesimulator/Zelda.app/Icon-72.png88"[1mCpResource[0m Zelda/Icon-72.png build/Release-iphonesimulator/Zelda.app/Icon-72.pnge44ac5d6d51eb941^5b98c5d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-72.png0034cc6bddffdf42^788"[1mCpResource[0m Zelda/Icon-72.png build/Release-iphonesimulator/Zelda.app/Icon-72.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon-72.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"75A1F18E-8CEE-4AC8-967C-FCDF5D175F5A-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon-72@2x.png build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png
-s421451222.770652
-e421451222.771949
-r1
-xCpResource
-xZelda/Icon-72@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon-72@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png94"[1mCpResource[0m Zelda/Icon-72@2x.png build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png2367c5d6d51eb941^15a8c5d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png0034cc6bddffdf42^797"[1mCpResource[0m Zelda/Icon-72@2x.png build/Release-iphonesimulator/Zelda.app/Icon-72@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon-72@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"13090DFB-0F69-43E8-9D42-446B48C2E932-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon-76.png build/Release-iphonesimulator/Zelda.app/Icon-76.png
-s421451222.771967
-e421451222.773174
-r1
-xCpResource
-xZelda/Icon-76.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon-76.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Release-iphonesimulator/Zelda.app/Icon-76.png88"[1mCpResource[0m Zelda/Icon-76.png build/Release-iphonesimulator/Zelda.app/Icon-76.png26c3c5d6d51eb941^6f2ac6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-76.png0034cc6bddffdf42^788"[1mCpResource[0m Zelda/Icon-76.png build/Release-iphonesimulator/Zelda.app/Icon-76.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon-76.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"8CE02FE7-429F-4E2A-9C8E-D2E554A36841-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon-76@2x.png build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png
-s421451222.772441
-e421451222.773711
-r1
-xCpResource
-xZelda/Icon-76@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon-76@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png94"[1mCpResource[0m Zelda/Icon-76@2x.png build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png87dfc5d6d51eb941^6c3ec6d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png0034cc6bddffdf42^797"[1mCpResource[0m Zelda/Icon-76@2x.png build/Release-iphonesimulator/Zelda.app/Icon-76@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon-76@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"6A2DEA4D-A50B-47A6-91DD-2A26278DB7C0-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon.png build/Release-iphonesimulator/Zelda.app/Icon.png
-s421451222.769766
-e421451222.771416
-r1
-xCpResource
-xZelda/Icon.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy build/Release-iphonesimulator/Zelda.app/Icon.png82"[1mCpResource[0m Zelda/Icon.png build/Release-iphonesimulator/Zelda.app/Icon.png5531c5d6d51eb941^957fc5d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon.png0034cc6bddffdf42^779"[1mCpResource[0m Zelda/Icon.png build/Release-iphonesimulator/Zelda.app/Icon.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"5C687D72-6228-4831-80CA-17C229016728-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/Icon@2x.png build/Release-iphonesimulator/Zelda.app/Icon@2x.png
-s421451222.769921
-e421451222.771407
-r1
-xCpResource
-xZelda/Icon@2x.png
-xbuild/Release-iphonesimulator/Zelda.app/Icon@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Release-iphonesimulator/Zelda.app/Icon@2x.png88"[1mCpResource[0m Zelda/Icon@2x.png build/Release-iphonesimulator/Zelda.app/Icon@2x.png6132c5d6d51eb941^fb77c5d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Icon@2x.png0034cc6bddffdf42^788"[1mCpResource[0m Zelda/Icon@2x.png build/Release-iphonesimulator/Zelda.app/Icon@2x.png    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/Icon@2x.png /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"4D12B4FE-123E-44D5-BE0E-785658B2AAC1-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CCpResource Zelda/assets build/Release-iphonesimulator/Zelda.app/assets
-s421451222.769481
-e421451222.772443
-r1
-xCpResource
-xZelda/assets
-xbuild/Release-iphonesimulator/Zelda.app/assets
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Copy build/Release-iphonesimulator/Zelda.app/assets78"[1mCpResource[0m Zelda/assets build/Release-iphonesimulator/Zelda.app/assets5e14c5d6d51eb941^26c3c5d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@93"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/assets0034cc6bddffdf42^773"[1mCpResource[0m Zelda/assets build/Release-iphonesimulator/Zelda.app/assets    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/willem/Projects/zelda/export/ios/Zelda/assets /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app36"B2D35A14-741B-4819-A8A0-B647C4D950FF-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CGenerateDSYMFile /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda
-s421451223.292121
-e421451223.375188
-r1
-xGenerateDSYMFile
-x/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM
-x/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Generate /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM123"[1mGenerateDSYMFile[0m [1mbuild/Release-iphonesimulator/Zelda.app.dSYM[0m build/Release-iphonesimulator/Zelda.app/Zelda51db4ad7d51eb941^d80c60d7d51eb941^---0#0#1#-19%DVTDocumentLocation2@91"file:///Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM0034cc6bddffdf42^721"[1mGenerateDSYMFile[0m [1mbuild/Release-iphonesimulator/Zelda.app.dSYM[0m build/Release-iphonesimulator/Zelda.app/Zelda    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda -o /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app.dSYM36"26F2E82F-EB4E-4294-AEE9-A6F02291BB95-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CLd /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda normal i386
-s421451222.837615
-e421451223.291184
-r1
-xLd
-x/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda
-xnormal
-xi386
-d/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Zelda.LinkFileList
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
-d/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Main.o
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libstd.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libregexp.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libzlib.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/liblime.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libcurl_ssl.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libpng.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libjpeg.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libfreetype.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libogg.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libvorbis.a
-d/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386/libApplicationMain.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenAL.framework/OpenAL
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreMotion.framework/CoreMotion
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libc++.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
-d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
-d/usr/lib/libSystem.B.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libc++abi.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
-d/usr/lib/system/libcache.dylib
-d/usr/lib/system/libcommonCrypto.dylib
-d/usr/lib/system/libcompiler_rt.dylib
-d/usr/lib/system/libcopyfile.dylib
-d/usr/lib/system/libcorecrypto.dylib
-d/usr/lib/system/libkeymgr.dylib
-d/usr/lib/system/liblaunch.dylib
-d/usr/lib/system/libmacho.dylib
-d/usr/lib/system/libquarantine.dylib
-d/usr/lib/system/libremovefile.dylib
-d/usr/lib/system/libsystem_asl.dylib
-d/usr/lib/system/libsystem_blocks.dylib
-d/usr/lib/system/libsystem_c.dylib
-d/usr/lib/system/libsystem_configuration.dylib
-d/usr/lib/system/libsystem_dnssd.dylib
-d/usr/lib/system/libsystem_info.dylib
-d/usr/lib/system/libsystem_kernel.dylib
-d/usr/lib/system/libsystem_m.dylib
-d/usr/lib/system/libsystem_malloc.dylib
-d/usr/lib/system/libsystem_notify.dylib
-d/usr/lib/system/libsystem_platform.dylib
-d/usr/lib/system/libsystem_pthread.dylib
-d/usr/lib/system/libsystem_sandbox.dylib
-d/usr/lib/system/libunc.dylib
-d/usr/lib/system/libunwind.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Link /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda68"[1mLd[0m build/Release-iphonesimulator/Zelda.app/Zelda normal i386e57fd6d6d51eb941^488c4ad7d51eb941^---0#0#1#--1722"[1mLd[0m build/Release-iphonesimulator/Zelda.app/Zelda normal i386    cd /Users/willem/Projects/zelda/export/ios    export IPHONEOS_DEPLOYMENT_TARGET=5    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator -L/Users/willem/Projects/zelda/export/ios/Zelda/lib/i386 -F/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator -filelist /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Zelda.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lstd -lregexp -lzlib -llime -lcurl_ssl -lpng -ljpeg -lfreetype -logg -lvorbis -lApplicationMain -stdlib=libc++ -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5 -framework UIKit -framework OpenAL -framework OpenGLES -framework QuartzCore -framework CoreAudio -framework CoreGraphics -framework AudioToolbox -framework AVFoundation -framework Foundation -framework CoreMotion -framework MediaPlayer -Xlinker -dependency_info -Xlinker /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Objects-normal/i386/Zelda_dependency_info.dat -o /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Zelda36"41B16C52-D068-43E1-839C-BE802C48EC7D-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CProcessInfoPlistFile /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Info.plist /Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist
-s421451222.757839
-e421451222.768842
-r1
-xProcessInfoPlistFile
-x/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Info.plist
-x/Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Process /Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist110"[1mProcessInfoPlistFile[0m build/Release-iphonesimulator/Zelda.app/Info.plist [1mZelda/Zelda-Info.plist[0m821ac2d6d51eb941^89d0c4d6d51eb941^---0#0#1#-19%DVTDocumentLocation2@69"file:///Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist0000000000000000^782"[1mProcessInfoPlistFile[0m build/Release-iphonesimulator/Zelda.app/Info.plist [1mZelda/Zelda-Info.plist[0m    cd /Users/willem/Projects/zelda/export/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility /Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Info.plist -genpkginfo /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app/Info.plist36"3972DFBF-12E4-42A6-AE2C-C5BF74C42302-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CProcessPCH++ /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch Zelda/Zelda-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s421451222.777331
-e421451222.800838
-r1
-xProcessPCH++
-x/var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch
-xZelda/Zelda-Prefix.pch
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection33"Precompile Zelda/Zelda-Prefix.pch284"[1mProcessPCH++[0m /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch Zelda/Zelda-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler8411c7d6d51eb941^cd06cdd6d51eb941^---0#0#1#-19%DVTDocumentLocation2@69"file:///Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Prefix.pch0000000000000000^3417"[1mProcessPCH++[0m /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch Zelda/Zelda-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/willem/Projects/zelda/export/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications:/usr/local/bin:/Users/willem/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu++11 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5 -iquote /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-generated-files.hmap -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-own-target-headers.hmap -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-all-target-headers.hmap -iquote /Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/Zelda-project-headers.hmap -I/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/DerivedSources/i386 -I/Users/willem/Projects/zelda/export/ios/build/Zelda.build/Release-iphonesimulator/Zelda.build/DerivedSources -F/Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator -DNS_BLOCK_ASSERTIONS=1 --serialize-diagnostics /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.d -c /Users/willem/Projects/zelda/export/ios/Zelda/Zelda-Prefix.pch -o /var/folders/9y/knsv81hd4nlbz2krb09wn36h0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Zelda-Prefix-dayzqueihkgacdfmctvecqsldynm/Zelda-Prefix.pch.pch36"36873004-387A-4FC6-B52E-E4830C14A89D-
-bBDBFDC37-15D7-4B36-BDC2-5E02E8908827
-
-CTouch /Users/willem/Projects/zelda/export/ios/build/Release-iphonesimulator/Zelda.app
-r0
-

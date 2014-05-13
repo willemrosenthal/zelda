@@ -37,7 +37,8 @@ class PlayState extends FlxState
     private var gWidth:Int;
 
     private var mapx:Float = 0;
-    private var mapy:Float = 0;
+    private var mapy:Float = 24;
+    private var hudyAdjust:Float = 10;
     private var levelMap:FlxTilemap = new FlxTilemap();
     private var mapData:String;
     private var tileSet:String;
@@ -69,6 +70,7 @@ class PlayState extends FlxState
 
     private var a:AButton;
     private var b:BButton;
+    private var hudTest:FlxSprite;
     private var mtf:MultitouchField;
 
 
@@ -105,6 +107,7 @@ class PlayState extends FlxState
         gHight = Global.tileSize * mapHeight;
         gWidth = Global.tileSize * mapWidth;
         Global.gameTileSize = [mapWidth,mapHeight];
+        Global.mapy = mapy;
         xScrollSpeed = 4; //gWidth/scrollTotalFrames;
         yScrollSpeed = 4; //gHight/scrollTotalFrames;
         pSSx = xScrollSpeed * ((mapWidth - 0.7)/mapWidth);
@@ -159,16 +162,16 @@ class PlayState extends FlxState
         border = new FlxGroup();
         add(border);
 
-        tBox = new FlxSprite(0, -8,"assets/images/bar_h.png");
+        tBox = new FlxSprite(0, -8 + mapy,"assets/images/ui/bar_h.png");
         border.add(tBox);
 
-        lBox = new FlxSprite(-8, 0,"assets/images/bar_v.png");
+        lBox = new FlxSprite(-8, 0 + mapy,"assets/images/ui/bar_v.png");
         border.add(lBox);
 
-        bBox = new FlxSprite(0, gHight + 8,"assets/images/bar_h.png");
+        bBox = new FlxSprite(0, gHight + 8 + mapy,"assets/images/ui/bar_h.png");
         border.add(bBox);
 
-        rBox = new FlxSprite(gWidth + 8, 0,"assets/images/bar_v.png");
+        rBox = new FlxSprite(gWidth + 8, 0 + mapy,"assets/images/ui/bar_v.png");
         border.add(rBox);
 
         //hud
@@ -176,13 +179,13 @@ class PlayState extends FlxState
         add(hud);
 
         var joyPosX:Float = Global.gameWidth * 0.27;
-        var joyPosY:Float = Global.gameHeight * 0.82;
+        var joyPosY:Float = Global.gameHeight * 0.82 + hudyAdjust;
 
 
-        blackBox = new FlxSprite(0, gHight + levelMap.y,"assets/images/blackbox.png");
+        blackBox = new FlxSprite(0, gHight + levelMap.y,"assets/images/ui/blackbox.png");
         hud.add(blackBox);
 
-        joystickBG = new FlxSprite(joyPosX, joyPosY,"assets/images/joystick_ring.png");   //"assets/joystick_ring_big.png"
+        joystickBG = new FlxSprite(joyPosX, joyPosY,"assets/images/ui/joystick_ring.png");   //"assets/joystick_ring_big.png"
         joystickBG.x -=  joystickBG.width * 0.5;
         joystickBG.y -=  joystickBG.height * 0.5;
         hud.add(joystickBG);
@@ -190,11 +193,14 @@ class PlayState extends FlxState
         joystick = new Joystick(joyPosX, joyPosY, joystickBG.width);
         hud.add(joystick);
 
-        a = new AButton(90,180);
+        a = new AButton(90,180 + hudyAdjust);
         hud.add(a);
 
-        b = new BButton(120,210);
+        b = new BButton(120,210 + hudyAdjust);
         hud.add(b);
+
+        hudTest = new FlxSprite(0, 0,"assets/images/ui/hud_test.png");
+        hud.add(hudTest);
 
         mtf = new MultitouchField();
         add(mtf);
@@ -228,14 +234,14 @@ class PlayState extends FlxState
             levelMap.y += yScrollSpeed;
             nextMap.y += yScrollSpeed;
             player.y += pSSy;
-            if (levelMap.y >= gHight)
+            if (levelMap.y >= gHight + mapy)
                 finishSroll();
         }
         if (nextDir == "down") {
             levelMap.y -= yScrollSpeed;
             nextMap.y -= yScrollSpeed;
             player.y -= pSSy;
-            if (levelMap.y <= -gHight)
+            if (levelMap.y <= -gHight + mapy)
                 finishSroll();
         }
         if (nextDir == "left") {

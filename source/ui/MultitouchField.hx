@@ -25,7 +25,7 @@ class MultitouchField extends FlxBasic
 
 	private function onBegin(e:TouchEvent):Void
 	{
-		if (Global.T1id != -1 && Global.T2id != -1 && Global.T3id != -1)
+		if (Global.T1id != -1 && Global.T2id != -1)
 			return;
 
 		if (Global.T1id == -1)

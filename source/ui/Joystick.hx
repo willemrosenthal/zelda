@@ -31,7 +31,7 @@ class Joystick extends FlxSprite {
 		originPoint = new FlxPoint(X,Y);
 		moveDirs = new FlxPoint(0,0);
 
-		loadGraphic("assets/images/joystick.png", false, 20,20);
+		loadGraphic("assets/images/ui/joystick.png", false, 20,20);
 		offset.y = height * 0.5;
 		offset.x = width * 0.5;
 
@@ -190,8 +190,6 @@ class Joystick extends FlxSprite {
                 return true;
             if (Global.T2Use == "joy")
                 return false;
-            if (Global.T3Use == "joy")
-                return false;
             if (Global.T1Use == "")
                 return true;
         }
@@ -200,19 +198,7 @@ class Joystick extends FlxSprite {
                 return true;
             if (Global.T1Use == "joy")
                 return false;
-            if (Global.T3Use == "joy")
-                return false;
             if (Global.T2Use == "")
-                return true;
-        }
-        if (TouchNo == 3) {
-            if (Global.T3Use == "joy")
-                return true;
-            if (Global.T1Use == "joy")
-                return false;
-            if (Global.T2Use == "joy")
-                return false;
-            if (Global.T3Use == "")
                 return true;
         }
         return false;

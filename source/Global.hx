@@ -13,6 +13,7 @@ class Global {
     static public var gameTileSize:Array<Int> = [0,0];
     static public var gameHeight:Float;
     static public var gameWidth:Float;
+    static public var mapy:Float;
 
 	static public var mouseEnabled:Bool;
 	static public var firstTouchId:Int = -1;
@@ -44,9 +45,6 @@ class Global {
     static public var T2id:Int = -1;
     static public var T2:FlxPoint;
     static public var T2Use:String = "";
-    static public var T3id:Int = -1;
-    static public var T3:FlxPoint;
-    static public var T3Use:String = "";
 
 
 

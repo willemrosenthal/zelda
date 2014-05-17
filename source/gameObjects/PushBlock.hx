@@ -27,14 +27,13 @@ class PushBlock extends GameObject
         animation.play("Basic");
 
         immovable = true;
-        allowCollisions = FlxObject.NONE;
 	}
 
     override public function update():Void
     {
         super.update();
 
-        if (entering)
+        if (entering || Global.changingScreens || primeForDeath)
             return;
 
         if (!hitSides(true))

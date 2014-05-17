@@ -15,7 +15,6 @@ class ForegroundObject extends GameObject
 
         if (Solid)
             allowCollisions = FlxObject.ANY;
-        else allowCollisions = FlxObject.NONE;
 
         animation.play("Basic");
 	}

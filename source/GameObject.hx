@@ -1,5 +1,6 @@
 package ;
 
+import flixel.FlxObject;
 import flixel.FlxSprite;
 
 class GameObject extends FlxSprite
@@ -16,6 +17,7 @@ class GameObject extends FlxSprite
 	public function new(X:Float, Y:Float)
 	{
 		super(X, Y);
+        allowCollisions = FlxObject.NONE;
 	}
 
 

@@ -12,6 +12,10 @@ class Player extends FlxSprite
     public var dir:String = "down";
     public var cAnim:String = "down";
 
+    // postioning
+    public var moveingDir:FlxPoint = new FlxPoint(0,0);
+    public var perfectY:Float;
+
     private var xChange:Float;
     private var yChange:Float;
 
@@ -58,6 +62,8 @@ class Player extends FlxSprite
             speed.x = Global.move.x * maxSpeed;
             speed.y = Global.move.y * maxSpeed;
         }
+        moveingDir.x = Global.move.x;
+        moveingDir.y = Global.move.y;
 
         // animations
         if (knock)
@@ -70,18 +76,26 @@ class Player extends FlxSprite
         }
         else if (Math.abs(speed.x) > Math.abs(speed.y))
         {
-            if (speed.x > 0)
+            if (speed.x > 0) {
                 animation.play("right");
-            if (speed.x < 0)
+                dir = "right";
+            }
+            if (speed.x < 0) {
                 animation.play("left");
+                dir = "left";
+            }
             cAnim = animation.curAnim.name;
         }
         else if (Math.abs(speed.x) < Math.abs(speed.y))
         {
-            if (speed.y > 0)
+            if (speed.y > 0) {
                 animation.play("down");
-            if (speed.y < 0)
+                dir = "down";
+            }
+            if (speed.y < 0) {
                 animation.play("up");
+                dir = "up";
+            }
             cAnim = animation.curAnim.name;
         }
 
@@ -94,10 +108,18 @@ class Player extends FlxSprite
         stopAtEdges();
 
 
-        if (hitSides())
+        if (hitSides()) {
+            x = Math.round(x/Global.tileSize) * Global.tileSize;
             xChange = 0;
-        if (hitVert())
+        }
+        if (hitVert()) {
+            perfectY = Math.round(y/Global.tileSize) * Global.tileSize + Global.mapyTSD;
+            y = perfectY;
+            if (yChange < 0)
+               y -= (height * 0.3);
+            else y -= 1;
             yChange = 0;
+        }
 
 
         x += xChange;

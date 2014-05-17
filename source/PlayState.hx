@@ -6,24 +6,18 @@ import ui.Joystick;
 import ui.AButton;
 import ui.BButton;
 import flixel.FlxSprite;
-import flixel.util.FlxPoint;
-import flash.Lib;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.text.FlxText;
-import flixel.ui.FlxButton;
-import flixel.util.FlxMath;
 
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.FlxSprite;
-import flixel.FlxObject;
-import flixel.text.FlxText;
 import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
 import openfl.Assets;
 
+import gameObjects.ForegroundObject;
 
 /**
  * A FlxState which can be used for the actual gameplay.
@@ -62,6 +56,7 @@ class PlayState extends FlxState
     public var map:FlxGroup;
     public var enemeis:FlxGroup;
     public var objects:FlxGroup;
+    public var groundObjects:FlxGroup;
     public var hud:FlxGroup;
     public var border:FlxGroup;
 
@@ -102,14 +97,20 @@ class PlayState extends FlxState
 
         buildMap();
 
+        groundObjects = new FlxGroup();
+        add(groundObjects);
+
         player = new Player(4.5 * Global.tileSize,3.5 * Global.tileSize);
         add(player);
+        Global.player = player;
 
         enemeis = new FlxGroup();
         add(enemeis);
 
         objects = new FlxGroup();
         add(objects);
+
+
 
         setupHud();
 	}
@@ -120,6 +121,7 @@ class PlayState extends FlxState
         gWidth = Global.tileSize * mapWidth;
         Global.gameTileSize = [mapWidth,mapHeight];
         Global.mapy = mapy;
+        Global.mapyTSD = mapy - Global.tileSize;
         xScrollSpeed = 4; //gWidth/scrollTotalFrames;
         yScrollSpeed = 4; //gHight/scrollTotalFrames;
         pSSx = xScrollSpeed * ((mapWidth - 0.7)/mapWidth);
@@ -145,10 +147,9 @@ class PlayState extends FlxState
     function buildNextMap():Void
     {
         nextData = "assets/levels/" + Global.levels[Global.n[0]][Global.n[1]] + ".txt";
-        mapObjectData = "assets/levels/" + Global.levels[Global.c[0]][Global.c[1]] + "_obj.txt";
+        mapObjectData = "assets/levels/" + Global.levels[Global.n[0]][Global.n[1]] + "_obj.txt";
         nextSet = "assets/tilesets/1.png";
         tileSetObjects = "assets/tilesets/1_obj.png";
-
 
         nextMap.loadMap(Assets.getText(nextData), nextSet, Global.tileSize, Global.tileSize, FlxTilemap.OFF,0);
 
@@ -179,26 +180,49 @@ class PlayState extends FlxState
     private function buildMapObjects():Void {
         mapObjArray = Calc.mapInterpretor(mapObjectData);
 
-        var nextx:Float = nextMap.x;
-        var nexty:Float = nextMap.y;
+        //var nextx:Float = nextMap.x;
+        //var nexty:Float = nextMap.y;
+        var oc:String = "";
 
         if (mapObjArray == null)
             return null;
 
         for (n in 0...mapObjArray.length -1) {
             for (q in 0...mapObjArray[n].length -1) {
+                oc = gameObjectTypeChecker(mapObjArray[n][q]);
                 if (mapObjArray[n][q] == "0")
                     continue;
-                if (Std.parseInt(mapObjArray[n][q]) == null) {
+                if (oc == "enemy")
                     trace("is enemy - " + n + " " + q);
-                }
-                else {
-                    objects.add(new ForegroundObject(q * Global.tileSize + nextx, n * Global.tileSize + nexty, Std.parseInt(mapObjArray[n][q]), tileSetObjects));   // make game object
-                }
+
+                if (oc == "worldObject")
+                    objectAdder(mapObjArray[n][q], n, q, true);
+
+                if (oc == "fgObject")
+                    objectAdder(mapObjArray[n][q], n, q);
             }
         }
         //trace(objects.members[0].exists);
     }
+
+    private function gameObjectTypeChecker(ObjectId:String):String {
+        if (Std.parseInt(ObjectId) != null)
+            return "fgObject";
+        else if (ObjectId.charAt(0) == "e")
+            return "enemy";
+        else if (ObjectId.charAt(0) == "o")
+            return "worldObject";
+        return "none";
+    }
+
+    private function objectAdder(ObjNo:String, Row:Int, Col:Int, Go:Bool = false):Void {
+        if (Go) {
+            groundObjects.add(ObjectIndex.getGameObject(ObjNo, Col * Global.tileSize + nextMap.x, Row * Global.tileSize + nextMap.y));
+            return;
+        }
+        objects.add(new ForegroundObject(Col * Global.tileSize + nextMap.x, Row * Global.tileSize + nextMap.y, Std.parseInt(ObjNo), tileSetObjects));   // make game objec
+    }
+
 
     private function setupHud():Void {
         // border
@@ -268,9 +292,18 @@ class PlayState extends FlxState
 
         FlxG.overlap(player, border, touchEdge);
 
+        FlxG.collide(player, groundObjects, collideF);
+
         if (Global.changingScreens == true)
             moveScreens();
     }
+
+    private function collideF(player:Player, GmObject:FlxBasic):Void {
+        var go:GameObject = cast(GmObject, GameObject);
+        if (go.uniqueCollideAction)
+            go.collide(player);
+    }
+
 
     private function moveScreens():Void {
         if (nextDir == "up") {
@@ -301,7 +334,9 @@ class PlayState extends FlxState
             if (levelMap.x <= -gWidth + mapx)
                 finishSroll();
         }
+        groundObjects.forEach(scrollOver);
         objects.forEach(scrollOver);
+        enemeis.forEach(scrollOver);
     }
 
 
@@ -309,9 +344,9 @@ class PlayState extends FlxState
     private function scrollOver(GmObject:FlxBasic):Void {
         var go:GameObject = cast(GmObject, GameObject);
         if (Global.nextDir == "up")
-            go.y -= Global.yScrollSpeed;
-        else if (Global.nextDir == "down")
             go.y += Global.yScrollSpeed;
+        else if (Global.nextDir == "down")
+            go.y -= Global.yScrollSpeed;
         else if (Global.nextDir == "right")
             go.x -= Global.xScrollSpeed;
         else if (Global.nextDir == "left")

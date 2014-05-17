@@ -7,6 +7,8 @@ class Global {
 
 	static public var ini:Bool;
 
+    static public var player:Player;
+
 	static public var zeroPoint:FlxPoint;
 
     static public var tileSize:Int = 16;
@@ -14,6 +16,7 @@ class Global {
     static public var gameHeight:Float;
     static public var gameWidth:Float;
     static public var mapy:Float;
+    static public var mapyTSD:Float;      // tile size diff for mappy
 
 	static public var mouseEnabled:Bool;
 	static public var firstTouchId:Int = -1;

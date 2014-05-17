@@ -110,8 +110,10 @@ class Player extends FlxSprite
 
         if (hitSides()) {
             x = Math.round(x/Global.tileSize) * Global.tileSize;
+            if (Math.abs(xChange * 0.5) > Math.abs(yChange))
+                yChange *= 0.2;
+
             xChange = 0;
-            yChange *= 0.5;
         }
         if (hitVert()) {
             perfectY = Math.round(y/Global.tileSize) * Global.tileSize + Global.mapyTSD;
@@ -119,8 +121,10 @@ class Player extends FlxSprite
             if (yChange < 0)
                y -= (height * 0.3);
             else y -= 1;
+
+            if (Math.abs(yChange * 0.5) > Math.abs(xChange))
+                xChange *= 0.2;
             yChange = 0;
-            xChange *= 0.5;
         }
 
 

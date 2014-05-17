@@ -75,7 +75,7 @@ class PlayState extends FlxState
     private var mtf:MultitouchField;
 
 
-    private var gameZoom:Float = 3;
+    private var gameZoom:Float = 4;
 
     public var player:Player;
 
@@ -122,8 +122,8 @@ class PlayState extends FlxState
         Global.gameTileSize = [mapWidth,mapHeight];
         Global.mapy = mapy;
         Global.mapyTSD = mapy - Global.tileSize;
-        xScrollSpeed = 4; //gWidth/scrollTotalFrames;
-        yScrollSpeed = 4; //gHight/scrollTotalFrames;
+        xScrollSpeed = 5; //gWidth/scrollTotalFrames;
+        yScrollSpeed = 5; //gHight/scrollTotalFrames;
         pSSx = xScrollSpeed * ((mapWidth - 0.7)/mapWidth);
         pSSy = yScrollSpeed * ((mapHeight - 0.7)/mapHeight);
         Global.xScrollSpeed = xScrollSpeed;

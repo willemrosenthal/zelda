@@ -33,6 +33,9 @@ class Global {
     static public var changingScreens:Bool;
     static public var nextDir:String;   // direction of next screen
 
+    static public var xScrollSpeed:Float;
+    static public var yScrollSpeed:Float;
+
     //buttons
     static public var a:Bool;
     static public var b:Bool;

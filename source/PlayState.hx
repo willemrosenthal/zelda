@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxBasic;
 import ui.MultitouchField;
 import ui.Joystick;
 import ui.AButton;
@@ -41,7 +42,10 @@ class PlayState extends FlxState
     private var hudyAdjust:Float = 10;
     private var levelMap:FlxTilemap = new FlxTilemap();
     private var mapData:String;
+    private var mapObjectData:String;
     private var tileSet:String;
+    private var tileSetObjects:String;
+    private var mapObjArray:Array<Array<String>>;
 
     private var nextMap:FlxTilemap = new FlxTilemap();
     private var nextData:String;
@@ -56,6 +60,8 @@ class PlayState extends FlxState
 
 
     public var map:FlxGroup;
+    public var enemeis:FlxGroup;
+    public var objects:FlxGroup;
     public var hud:FlxGroup;
     public var border:FlxGroup;
 
@@ -99,6 +105,12 @@ class PlayState extends FlxState
         player = new Player(4.5 * Global.tileSize,3.5 * Global.tileSize);
         add(player);
 
+        enemeis = new FlxGroup();
+        add(enemeis);
+
+        objects = new FlxGroup();
+        add(objects);
+
         setupHud();
 	}
 
@@ -112,6 +124,8 @@ class PlayState extends FlxState
         yScrollSpeed = 4; //gHight/scrollTotalFrames;
         pSSx = xScrollSpeed * ((mapWidth - 0.7)/mapWidth);
         pSSy = yScrollSpeed * ((mapHeight - 0.7)/mapHeight);
+        Global.xScrollSpeed = xScrollSpeed;
+        Global.yScrollSpeed = yScrollSpeed;
     }
 
     function buildMap():Void
@@ -131,7 +145,10 @@ class PlayState extends FlxState
     function buildNextMap():Void
     {
         nextData = "assets/levels/" + Global.levels[Global.n[0]][Global.n[1]] + ".txt";
+        mapObjectData = "assets/levels/" + Global.levels[Global.c[0]][Global.c[1]] + "_obj.txt";
         nextSet = "assets/tilesets/1.png";
+        tileSetObjects = "assets/tilesets/1_obj.png";
+
 
         nextMap.loadMap(Assets.getText(nextData), nextSet, Global.tileSize, Global.tileSize, FlxTilemap.OFF,0);
 
@@ -152,9 +169,35 @@ class PlayState extends FlxState
             nextMap.y = levelMap.y;
         }
 
+        buildMapObjects();
+
         nextMap.visible = true;
 
         map.add(nextMap);
+    }
+
+    private function buildMapObjects():Void {
+        mapObjArray = Calc.mapInterpretor(mapObjectData);
+
+        var nextx:Float = nextMap.x;
+        var nexty:Float = nextMap.y;
+
+        if (mapObjArray == null)
+            return null;
+
+        for (n in 0...mapObjArray.length -1) {
+            for (q in 0...mapObjArray[n].length -1) {
+                if (mapObjArray[n][q] == "0")
+                    continue;
+                if (Std.parseInt(mapObjArray[n][q]) == null) {
+                    trace("is enemy - " + n + " " + q);
+                }
+                else {
+                    objects.add(new ForegroundObject(q * Global.tileSize + nextx, n * Global.tileSize + nexty, Std.parseInt(mapObjArray[n][q]), tileSetObjects));   // make game object
+                }
+            }
+        }
+        //trace(objects.members[0].exists);
     }
 
     private function setupHud():Void {
@@ -179,7 +222,7 @@ class PlayState extends FlxState
         add(hud);
 
         var joyPosX:Float = Global.gameWidth * 0.27;
-        var joyPosY:Float = Global.gameHeight * 0.82 + hudyAdjust;
+        var joyPosY:Float = Global.gameHeight * 0.78 + hudyAdjust;
 
 
         blackBox = new FlxSprite(0, gHight + levelMap.y,"assets/images/ui/blackbox.png");
@@ -237,29 +280,43 @@ class PlayState extends FlxState
             if (levelMap.y >= gHight + mapy)
                 finishSroll();
         }
-        if (nextDir == "down") {
+        else if (nextDir == "down") {
             levelMap.y -= yScrollSpeed;
             nextMap.y -= yScrollSpeed;
             player.y -= pSSy;
             if (levelMap.y <= -gHight + mapy)
                 finishSroll();
         }
-        if (nextDir == "left") {
+        else if (nextDir == "left") {
             levelMap.x += xScrollSpeed;
             nextMap.x += xScrollSpeed;
             player.x += pSSx;
             if (levelMap.x >= gWidth - mapx)
                 finishSroll();
         }
-        if (nextDir == "right") {
+        else if (nextDir == "right") {
             levelMap.x -= xScrollSpeed;
             nextMap.x -= xScrollSpeed;
             player.x -= pSSx;
             if (levelMap.x <= -gWidth + mapx)
                 finishSroll();
         }
+        objects.forEach(scrollOver);
     }
 
+
+
+    private function scrollOver(GmObject:FlxBasic):Void {
+        var go:GameObject = cast(GmObject, GameObject);
+        if (Global.nextDir == "up")
+            go.y -= Global.yScrollSpeed;
+        else if (Global.nextDir == "down")
+            go.y += Global.yScrollSpeed;
+        else if (Global.nextDir == "right")
+            go.x -= Global.xScrollSpeed;
+        else if (Global.nextDir == "left")
+            go.x += Global.xScrollSpeed;
+    }
 
     private function finishSroll():Void {
         Global.c = Global.n;

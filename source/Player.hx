@@ -39,6 +39,11 @@ class Player extends FlxSprite
 	{
         super.update();
 
+        // for testing - should be off on phone
+        #if ( !cpp && !neko )
+            computerControlls();
+        #end
+
         speed.x = 0;
         speed.y = 0;
 
@@ -59,7 +64,7 @@ class Player extends FlxSprite
         {
             animation.play(cAnim);
         }
-        else if (Global.move.x == 0 || Global.move.y == 0)
+        else if (Global.move.x == 0 && Global.move.y == 0)
         {
             animation.play("stop_" + cAnim);
         }
@@ -158,5 +163,24 @@ class Player extends FlxSprite
         // down
         if (yChange > 0 && (y + height + yChange)/Global.tileSize > Global.gameTileSize[1] && Global.c[0] == Global.levels.length -1)
             yChange = 0;
+    }
+
+    private function computerControlls():Void {
+        if (FlxG.keys.anyPressed(["LEFT", "A"]))
+            Global.move.x = -1;
+
+        if (FlxG.keys.anyPressed(["RIGHT", "D"]))
+            Global.move.x = 1;
+
+        if (FlxG.keys.anyPressed(["UP", "W"]))
+            Global.move.y = -1;
+
+        if (FlxG.keys.anyPressed(["DOWN", "S"]))
+            Global.move.y = 1;
+
+        if (Global.move.x != 0 && Global.move.y != 0) {
+            Global.move.x *= 0.75;
+            Global.move.y *= 0.75;
+        }
     }
 }

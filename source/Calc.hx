@@ -1,6 +1,7 @@
 package ;
 import flixel.util.FlxPoint;
 import flixel.FlxG;
+import openfl.Assets;
 
 class Calc {
 
@@ -41,6 +42,22 @@ class Calc {
     {
         return new FlxPoint(X/Global.tileSize, Y/Global.tileSize);
     }
+
+    static public function mapInterpretor(MapData:Dynamic):Array<Array<String>>
+    {
+        if (!Assets.exists(MapData))
+            return null;
+
+        var unsplitRows:Array<String> = Assets.getText(MapData).split("\n");
+        var finalArray:Array<Array<String>> = new Array();
+
+        for (n in 0...unsplitRows.length -1) {
+            var row:Array<String> = unsplitRows[n].split(",");
+            finalArray.push(row);
+        }
+        return finalArray;
+    }
+
 
 	public function new() {
 	}

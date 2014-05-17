@@ -7,12 +7,12 @@ class Button extends FlxSprite
 {
 
     private var mouseDown:Bool = false;
-    private var touch:String = "";
     private var mousex:Float;
     private var mousey:Float;
 
     public var name:String = "button";
     public var down:Bool = false;
+    public var bleedSize:Float = 5;
 
 
 	public function new(X:Float, Y:Float, Graphic:String, Width:Int, Height:Int)
@@ -31,7 +31,7 @@ class Button extends FlxSprite
 
         findMouse();
 
-        if (mousex > x && mousex < x + width && mousey > y && mousey < y + height) {
+        if (mousex > x - bleedSize && mousex < x + width + bleedSize && mousey > y - bleedSize && mousey < y + height + bleedSize) {
             down = true;
             animation.play("down");
             trace(Global.T1.x);
@@ -48,13 +48,13 @@ class Button extends FlxSprite
         mousex = 0;
         mousey = 0;
 
-        if (Global.T1id != -1 && (Global.T1Use == "" || Global.T1Use == name) && Global.T1.x > x && Global.T1.x < x + width && Global.T1.y > y && Global.T1.y < y + height) {
+        if (Global.T1id != -1 && (Global.T1Use == "" || Global.T1Use == name) && Global.T1.x > x - bleedSize && Global.T1.x < x + width + bleedSize && Global.T1.y > y - bleedSize && Global.T1.y < y + height + bleedSize) {
             mousex = Global.T1.x;
             mousey = Global.T1.y;
             Global.T1Use = name;
             return;
         }
-        if (Global.T2id != -1 && (Global.T2Use == "" || Global.T2Use == name) && Global.T2.x > x && Global.T2.x < x + width && Global.T2.y > y && Global.T2.y < y + height) {
+        if (Global.T2id != -1 && (Global.T2Use == "" || Global.T2Use == name) && Global.T2.x > x - bleedSize && Global.T2.x < x + width + bleedSize && Global.T2.y > y - bleedSize && Global.T2.y < y + height + bleedSize) {
             mousex = Global.T2.x;
             mousey = Global.T2.y;
             Global.T2Use = name;

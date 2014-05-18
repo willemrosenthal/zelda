@@ -293,6 +293,7 @@ class PlayState extends FlxState
         FlxG.overlap(player, border, touchEdge);
 
         FlxG.collide(player, groundObjects, collideF);
+        FlxG.collide(player, objects, collideF);
 
         if (Global.changingScreens == true)
             moveScreens();

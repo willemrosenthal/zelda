@@ -23,6 +23,8 @@ class PushBlock extends GameObject
 
         loadGraphic("assets/tilesets/gameobjects.png", true, 16, 16);
 
+        height *= 0.67;
+
         animation.add("Basic", [1]);
         animation.play("Basic");
 
@@ -57,13 +59,13 @@ class PushBlock extends GameObject
 
     private function checkForPush():Void {
         pushing = true;
-        if (Global.player.x == x + Global.tileSize && (Global.player.y < y + height * 0.35 && Global.player.y > y - height * 0.35) && Global.player.dir == "left" && Global.player.moveingDir.x < 0 && MapControl.getHitType(x - Global.tileSize,y) == okHitType)
+        if (Global.player.x == x + Global.tileSize && (Global.player.y < y + height * 0.4 && Global.player.y > y - height * 0.4) && Global.player.dir == "left" && Global.player.moveingDir.x < 0 && MapControl.getHitType(x - Global.tileSize,y) == okHitType)
             pushDir = "left";
-        else if (Global.player.x == x - Global.tileSize && (Global.player.y < y + height * 0.35 && Global.player.y > y - height * 0.35) && Global.player.dir == "right" && Global.player.moveingDir.x > 0 && MapControl.getHitType(x + Global.tileSize,y) == okHitType)
+        else if (Global.player.x == x - Global.tileSize && (Global.player.y < y + height * 0.4 && Global.player.y > y - height * 0.4) && Global.player.dir == "right" && Global.player.moveingDir.x > 0 && MapControl.getHitType(x + Global.tileSize,y) == okHitType)
             pushDir = "right";
-        else if (Global.player.perfectY == y + Global.tileSize && (Global.player.x < x + width * 0.35 && Global.player.x > x - width * 0.35) && Global.player.dir == "up" && Global.player.moveingDir.y < 0 && MapControl.getHitType(x,y - Global.tileSize) == okHitType)
+        else if (Global.player.perfectY == y + Global.tileSize && (Global.player.x < x + width * 0.4 && Global.player.x > x - width * 0.4) && Global.player.dir == "up" && Global.player.moveingDir.y < 0 && MapControl.getHitType(x,y - Global.tileSize) == okHitType)
             pushDir = "up";
-        else if (Global.player.perfectY == y - Global.tileSize && (Global.player.x < x + width * 0.35 && Global.player.x > x - width * 0.35) && Global.player.dir == "down" && Global.player.moveingDir.y > 0 && MapControl.getHitType(x,y + Global.tileSize) == okHitType)
+        else if (Global.player.perfectY == y - Global.tileSize && (Global.player.x < x + width * 0.4 && Global.player.x > x - width * 0.4) && Global.player.dir == "down" && Global.player.moveingDir.y > 0 && MapControl.getHitType(x,y + Global.tileSize) == okHitType)
             pushDir = "down";
         else {
             pushing = false;

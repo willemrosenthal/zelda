@@ -178,7 +178,7 @@ class PlayState extends FlxState
     }
 
     private function buildMapObjects():Void {
-        mapObjArray = Calc.mapInterpretor(mapObjectData);
+        mapObjArray = MapControl.mapInterpretor(mapObjectData);
 
         //var nextx:Float = nextMap.x;
         //var nexty:Float = nextMap.y;

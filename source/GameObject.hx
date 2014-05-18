@@ -49,19 +49,19 @@ class GameObject extends FlxSprite
 
         if (simple) {
             cy += height * 0.5;
-            if (Calc.getHitType(cx + xChange, cy) == 1)
+            if (MapControl.getHitType(cx + xChange, cy) == 1)
                 return true;
             return false;
         }
 
         cy += height * 0.1;
-        if (Calc.getHitType(cx + xChange, cy) == 1)
+        if (MapControl.getHitType(cx + xChange, cy) == 1)
             return true;
         cy += height * 0.4;
-        if (Calc.getHitType(cx + xChange, cy) == 1)
+        if (MapControl.getHitType(cx + xChange, cy) == 1)
             return true;
         cy += height * 0.4;
-        if (Calc.getHitType(cx + xChange, cy) == 1)
+        if (MapControl.getHitType(cx + xChange, cy) == 1)
             return true;
         return false;
 
@@ -74,19 +74,19 @@ class GameObject extends FlxSprite
 
         if (simple) {
             cx += width * 0.5;
-            if (Calc.getHitType(cx, cy + yChange) == 1)
+            if (MapControl.getHitType(cx, cy + yChange) == 1)
                 return true;
             return false;
         }
 
         cx += width * 0.1;
-        if (Calc.getHitType(cx, cy + yChange) == 1)
+        if (MapControl.getHitType(cx, cy + yChange) == 1)
             return true;
         cx += width * 0.4;
-        if (Calc.getHitType(cx, cy + yChange) == 1)
+        if (MapControl.getHitType(cx, cy + yChange) == 1)
             return true;
         cx += width * 0.4;
-        if (Calc.getHitType(cx, cy + yChange) == 1)
+        if (MapControl.getHitType(cx, cy + yChange) == 1)
             return true;
         return false;
     }

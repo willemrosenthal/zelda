@@ -193,13 +193,13 @@ class PlayState extends FlxState
                 if (mapObjArray[n][q] == "0")
                     continue;
                 if (oc == "enemy")
-                    trace("is enemy - " + n + " " + q);
+                    objectAdder(mapObjArray[n][q], n, q, oc);
 
                 if (oc == "worldObject")
-                    objectAdder(mapObjArray[n][q], n, q, true);
+                    objectAdder(mapObjArray[n][q], n, q, oc);
 
                 if (oc == "fgObject")
-                    objectAdder(mapObjArray[n][q], n, q);
+                    objectAdder(mapObjArray[n][q], n, q, oc);
             }
         }
         //trace(objects.members[0].exists);
@@ -215,8 +215,12 @@ class PlayState extends FlxState
         return "none";
     }
 
-    private function objectAdder(ObjNo:String, Row:Int, Col:Int, Go:Bool = false):Void {
-        if (Go) {
+    private function objectAdder(ObjNo:String, Row:Int, Col:Int, Type:String):Void {
+        if (Type == "enemy") {
+            enemeis.add(ObjectIndex.getEnemy(ObjNo, Col * Global.tileSize + nextMap.x, Row * Global.tileSize + nextMap.y));
+            return;
+        }
+        if (Type == "worldObject") {
             groundObjects.add(ObjectIndex.getGameObject(ObjNo, Col * Global.tileSize + nextMap.x, Row * Global.tileSize + nextMap.y));
             return;
         }
@@ -294,6 +298,7 @@ class PlayState extends FlxState
 
         FlxG.collide(player, groundObjects, collideF);
         FlxG.collide(player, objects, collideF);
+        FlxG.overlap(player, enemeis, collideF);
 
         if (Global.changingScreens == true)
             moveScreens();

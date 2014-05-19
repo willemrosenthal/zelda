@@ -15,6 +15,14 @@ class Calc {
 		return ((Math.round(Math.random()) * 2) - 1) * Value;
 	}
 
+    static public function existInArray(Ar:Array<Dynamic>, Value:Dynamic):Bool {
+        for (n in 0...Ar.length -1) {
+            if (Ar[n] == Value)
+                return true;
+        }
+        return false;
+    }
+
 	public function new() {
 	}
 }

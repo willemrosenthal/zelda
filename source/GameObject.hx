@@ -9,6 +9,7 @@ class GameObject extends FlxSprite
     public var primeForDeath:Bool;
     public var entering:Bool = true;
     public var uniqueCollideAction:Bool = false;
+    public var dontUpdate:Bool;
 
     // moving direction & speed
     private var xChange:Float = 0;
@@ -35,8 +36,22 @@ class GameObject extends FlxSprite
 
         if (primeForDeath && !Global.changingScreens)
             destroy();
+
+        if (entering || Global.changingScreens || primeForDeath)
+            dontUpdate = true;
+        else if (dontUpdate && !entering && !Global.changingScreens && !primeForDeath)
+            dontUpdate = false;
+
+        movement();
 	}
 
+    public function movement():Void {
+        x += xChange;
+        y += yChange;
+
+        xChange = 0;
+        yChange = 0;
+    }
 
 
     var cx:Float;   // check x
